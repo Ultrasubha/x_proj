@@ -219,6 +219,11 @@ a:active {
     padding: 1rem;
   }
 
+  .contentBorder {
+    border-radius: 1.5rem;
+    border: 1px solid rgb(63, 63, 63);
+  }
+
   .searchBar {
     padding: 0.5rem 1rem 0.5rem 1rem;
     border-radius: 10rem;
@@ -253,8 +258,12 @@ a:active {
     width: 100%;
   }
 
-  .tweetWithoutUserImg{
+  .tweetWithoutUserImg {
     width: 100%;
+  }
+
+  .tweetWithoutUserImg > * {
+    padding-top: 0.5rem;
   }
 
   .postInteractIcons {

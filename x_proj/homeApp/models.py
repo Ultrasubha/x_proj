@@ -7,7 +7,7 @@ class Post(models.Model):
     content = models.TextField(max_length=500)
     media = models.URLField(null=True, blank=True, default=None)
     created_at = models.DateTimeField(auto_now_add=True)
-
+    post_id = models.CharField()
     def __str__(self):
         return f"{self.author.username}'s Post - {self.created_at}"
     # image = models.ImageField(upload_to="post_images/", blank=True, null=True)

@@ -79,19 +79,19 @@
           alt="img"
           width="100%"
           height="100%"
+          class="contentBorder"
         />
         {% elif post.media|is_video %}
         <h1>{{ post.media }}</h1>
-        <video width="100%" height="100%" controls>
+        <video class="contentBorder" width="100%" height="100%" controls>
           <source src="../../../media/{{ post.media }}" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <!-- Handle other media types or scenarios here -->
-        {% endif %} 
-        {% comment %} {% else %} For posts without any media {% endcomment %}
+        {% endif %}
         {% endif %}
       </div>
-      <div class="farApart postInteractIcons">
+      <div class="farApart grayText postInteractIcons">
         <span class="fa fa-comment-o"></span>
         <span class="fa fa-retweet"></span>
         <span class="fa fa-heart-o"></span>
