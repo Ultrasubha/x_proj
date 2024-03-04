@@ -12,11 +12,14 @@
     />
      {% load custom_filters %}
     <link rel="stylesheet" href="{% static 'home.css' %}" />
+    <link rel="stylesheet" href="{% static 'profile.css' %}">
     <link rel="stylesheet" href="{% static 'test.css' %}" />
+    <script src="{% static 'home.js' %}" defer></script>
   </head>
-<body>
+<body onload="modifyUrl()">
     <nav>{% include 'homeApp/navbar.html' %}</nav>
-    <article class="faintBorder">{% include 'homeApp/tweets.html' %}</article>
+    <article class="faintBorder contentSection" id="tweetsBar">{% include 'homeApp/tweets.html' %}</article>
+    <article class="faintBorder contentSection" id="ProfileBar">{% include 'homeApp/profile.html' %}</article>
     <aside>{% include 'homeApp/latest.html' %}</aside>
     {% comment %} <div id="content">
         <article>{% block tweets %}{% endblock %}</article>

@@ -1,0 +1,52 @@
+.name {
+    color: #fff;
+    font-weight: bold;
+    width: 40%;
+    text-align: left;
+}
+
+.coverPhoto {
+    height: 10rem;
+}
+
+.bioTextArea {
+    padding: 1rem;
+}
+
+.editProfile {
+    background-color: transparent;
+    color: white;
+    border: 1px solid rgb(131, 121, 169);
+}
+
+.columnApart {
+    display: flex;
+    flex-direction: column;
+}
+
+.chaloLastMein {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.columnApart > * {
+    padding: 0.25rem;
+}
+
+.wtfSection > * {
+    padding: 0.5rem;
+}
+
+.newImgContainer {
+    position: relative;
+    top: 3rem;
+    left: 1rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 10rem;
+    color: brown;
+  }
+
+.imgBorder {
+    border: 2px solid black;
+}

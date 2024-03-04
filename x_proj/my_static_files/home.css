@@ -301,4 +301,16 @@ a:active {
     display: inline-block;
     font-size: 16px;
   }
+
+  .nodisplay {
+    display: none;
+  }
+
+  .contentSection {
+    display: none;
+  }
+
+  .contentSection:target {
+    display: block;
+  }
 }
