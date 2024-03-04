@@ -22,6 +22,13 @@ fi
 if [ $# -eq 0 ]; then
     # Start server
     echo "Wakarimashita, Goshujisama!"
+    if [ -n "$2" ]; then
+    python3 x_proj/manage.py runserver $2
+    echo "Started server at $2"
+    else
+    python3 x_proj/manage.py runserver
+    fi
+
     python3 x_proj/manage.py runserver #&
     #sleep 4
     # second task
