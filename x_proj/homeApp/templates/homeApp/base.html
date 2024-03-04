@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,16 +10,17 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    {% load static %} {% load custom_filters %}
+     {% load custom_filters %}
     <link rel="stylesheet" href="{% static 'home.css' %}" />
     <link rel="stylesheet" href="{% static 'test.css' %}" />
-    <script src="{% static 'home.js' %}"></script>
   </head>
-<body style="background-color:white">asd
-    <nav>{% block navbar %}{% endblock %}</nav>
-    <div id="content">
+<body>
+    <nav>{% include 'homeApp/navbar.html' %}</nav>
+    <article class="faintBorder">{% include 'homeApp/tweets.html' %}</article>
+    <aside>{% include 'homeApp/latest.html' %}</aside>
+    {% comment %} <div id="content">
         <article>{% block tweets %}{% endblock %}</article>
         <aside>{% block latest %}{% endblock %}</aside>
-    </div>
+    </div> {% endcomment %}
 </body>
 </html>

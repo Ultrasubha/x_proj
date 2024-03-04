@@ -9,7 +9,7 @@ from .models import Post
 def home_view(request):
     user = request.user
     posts = Post.objects.values('author__username', 'content', 'media', 'created_at').order_by('-created_at')
-    return render(request, "homeApp/home.html", {'user': user, 'posts': posts})
+    return render(request, "homeApp/base.html", {'user': user, 'posts': posts})
 
 
 def create_page(request):
