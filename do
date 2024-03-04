@@ -1,10 +1,11 @@
 # ACTIVATE PROJECT
-if [ -n "$VIRTUAL_ENV" ]; then
-    echo "Virtual environment is active"
-else
-    source x_venv/bin/activate
+if [ -d "x_venv" ]; then
+    if [ -n "$VIRTUAL_ENV" ]; then
+        echo "Virtual environment is active"
+    else
+        source x_venv/bin/activate
+    fi
 fi
-
 
 # KILL PREVIOUSLY ACTIVATED SERVER IF STILL ACTIVE
 
