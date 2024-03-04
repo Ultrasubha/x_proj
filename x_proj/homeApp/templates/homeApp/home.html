@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>(1) Home / X</title>
+    <link rel="icon" type="image/x-icon" href="images/x.avif" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    {% load static %} {% load custom_filters %}
+    <link rel="stylesheet" href="{%static 'home.css' %}" />
+    <link rel="stylesheet" href="{%static 'test.css' %}" />
+    <script src="{%static 'home.js' %}"></script>
+  </head>
+
+  <body>
+    <!-- <header>sd</header> -->
+    <nav>
+      <a aria-label="X" href="">
+        <span class="iconsTexts oneRemWidth">𝕏</span>
+      </a>
+      <a aria-label="X" href="">
+        <span class="fa fa-home"></span>
+        <span class="iconsTexts">Home</span>
+      </a>
+      <a aria-label="X" href="">
+        <span class="fa fa-search"></span>
+        <span class="iconsTexts">Explore</span>
+      </a>
+      <a aria-label="X" href="">
+        <span class="fa fa-bell-o"></span>
+        <span class="iconsTexts">Notifications</span>
+      </a>
+      <a aria-label="X" href="">
+        <span class="fa fa-envelope-o"></span>
+        <span class="iconsTexts">Messages</span>
+      </a>
+      <a aria-label="X" href="">
+        <span class="fa fa-minus-square-o"></span>
+        <span class="iconsTexts">Grok</span>
+      </a>
+      <a aria-label="X" href="">
+        <span class="fa fa-list"></span>
+        <span class="iconsTexts">Lists</span>
+      </a>
+      <a aria-label="X" href="">
+        <span class="fa fa-users"></span>
+        <span class="iconsTexts">Communities</span>
+      </a>
+      <a aria-label="X" href="">
+        <span class="fa fa-twitter"></span>
+        <span class="iconsTexts">Premium</span>
+      </a>
+      <a aria-label="X" href="">
+        <span class="fa fa-user-o"></span>
+        <span class="iconsTexts">Profile</span>
+      </a>
+      <a aria-label="X" href="">
+        <span class="fa fa-ellipsis-h"></span>
+        <span class="iconsTexts">More</span>
+      </a>
+      <button>Post</button>
+      <a class="onlyFlex" aria-label="X" href="">
+        <div class="imgContainer">
+          <img src="img_girl.jpg" alt="img" width="100%" height="100%" />
+        </div>
+        <span class="iconsTexts">UserName</span>
+      </a>
+    </nav>
+    <article class="faintBorder">
+      <section class="stickyUpper farApart">
+        <div class="stickyUpperTexts">For you</div>
+        <div class="stickyUpperTexts">Following</div>
+        <span class="fa fa-cog whiteText"></span>
+      </section>
+      <section class="postHere faintBorder">
+        <form action="createPost" , method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="onlyFlex">
+            <div class="imgContainer">
+              <img src="img_girl.jpg" alt="img" width="100%" height="100%" />
+            </div>
+            <div class="postKSabkuchh">
+              <input
+                class="largeText"
+                type="text"
+                name="mesg"
+                id="mesg"
+                placeholder="What is happening?!"
+                required
+              />
+              <div class="postLabels">
+                <div>
+                  <label for="media" class="posticons">
+                    <i class="fa fa-file-image-o"></i>
+                  </label>
+                  <input type="file" id="media" name="media" />
+
+                  <label for="media" class="posticons">
+                    <i class="fa fa-file-video-o"></i>
+                  </label>
+                  <input type="file" id="media" name="media" />
+
+                  <label for="media" class="posticons">
+                    <i class="fa fa-bar-chart"></i>
+                  </label>
+                  <input type="file" id="media" name="media" />
+
+                  <label for="media" class="posticons">
+                    <i class="fa fa-smile-o"></i>
+                  </label>
+                  <input type="file" id="media" name="media" />
+
+                  <label for="media" class="posticons">
+                    <i class="fa fa-calendar-o"></i>
+                  </label>
+                  <input type="file" id="media" name="media" />
+
+                  <label for="media" class="posticons">
+                    <i class="fa fa-map-marker"></i>
+                  </label>
+                  <input type="file" id="media" name="media" />
+                </div>
+                <div>
+                  <button class="thoraWidth">Post</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </section>
+      {% for post in posts %}
+      <section class="feed faintBorder">
+        <div class="whiteText farApart">
+          <div class="farApart">
+            <div class="imgContainer">
+              <img src="img_girl.jpg" alt="img" width="100%" height="100%" />
+            </div>
+            <div class="">
+              <div class="whiteText">
+                {{ post.author__username }} 👾@{{ post.author__username }} ·
+                {{post.created_at|custom_timesince }}
+              </div>
+              <div>{{ post.content }}</div>
+              <div class="mediaContent">
+                {% if post.media %}
+                  {% if post.media|is_image %}
+                    <img src="../../../media/{{ post.media }}" alt="img" width="100%" height="100%" />
+                  {% elif post.media|is_video %}
+                    <h1>{{ post.media }}</h1>
+                    <video width="100%" height="100%" controls>
+                      <source src="../../../media/{{ post.media }}" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  {% else %}
+                    <!-- Handle other media types or scenarios here -->
+                  {% endif %}
+                {% endif %} 
+              </div>
+              <div class="farApart postInteractIcons">
+                <span class="fa fa-comment-o"></span>
+                <span class="fa fa-retweet"></span>
+                <span class="fa fa-heart-o"></span>
+                <span class="fa fa-bar-chart"></span>
+                <div class="bookmarkShare">
+                  <span class="fa fa-bookmark"></span>
+                  <span class="fa fa-upload"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="fa fa-ellipsis-h"></span>
+        </div>
+      </section>
+      {% endfor %}
+    </article>
+    <aside>
+      <div class="searchBar cards">
+        <span class="fa fa-search grayText"></span>
+        <input
+          class=""
+          type="text"
+          name="search"
+          id="search"
+          placeholder="search"
+        />
+      </div>
+      <div class="onePad cards">
+        <div class="semiLargeText weighty whiteText">Subscribe to Premium</div>
+        <div class="whiteText">
+          Subscribe to unlock new features and if eligible, receive a share of
+          ads revenue.
+        </div>
+        <button>Subscribe</button>
+      </div>
+      <div class="onePad cards">
+        <div class="semiLargeText weighty whiteText">What’s happening</div>
+        <div class="whiteText">
+          <div class="farApart grayText smallText">
+            <div>Politics Tending</div>
+            <span class="fa fa-ellipsis-h"></span>
+          </div>
+          <div>#Alt Balaji</div>
+          <div class="farApart grayText smallText">1,414 posts</div>
+        </div>
+        <div class="whiteText">
+          <div class="farApart grayText smallText">
+            <div>Politics Tending</div>
+            <span class="fa fa-ellipsis-h"></span>
+          </div>
+          <div>#Alt Balaji</div>
+          <div class="farApart grayText smallText">1,414 posts</div>
+        </div>
+        <button>Subscribe</button>
+      </div>
+      <div class="onePad cards">
+        <div class="semiLargeText weighty whiteText">Who to follow</div>
+        <div class="farApart">
+          <div class="farApart">
+            <div class="imgContainer">
+              <img src="img_girl.jpg" alt="img" width="100%" height="100%" />
+            </div>
+            <div class="whoToFollow">
+              <div class="whiteText">PMO India</div>
+              <div class="whiteText">@PMOIndia</div>
+            </div>
+          </div>
+          <button class="followButton">Follow</button>
+        </div>
+        <div class="farApart">
+          <div class="farApart">
+            <div class="imgContainer">
+              <img src="img_girl.jpg" alt="img" width="100%" height="100%" />
+            </div>
+            <div class="whoToFollow">
+              <div class="whiteText">PMO India</div>
+              <div class="whiteText">@PMOIndia</div>
+            </div>
+          </div>
+          <button class="followButton">Follow</button>
+        </div>
+        <div class="skyBlue" href="">Show more</div>
+      </div>
+      <footer aria-label="Footer" role="navigation">
+        <a
+          href="https://help.twitter.com/using-x/download-the-x-app"
+          dir="ltr"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+          role="link"
+        >
+          <span>Terms of Service</span>
+        </a>
+        <a
+          href="https://help.twitter.com"
+          dir="ltr"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+          role="link"
+        >
+          <span>Privacy Policy</span>
+        </a>
+        <a
+          href="https://twitter.com/tos"
+          dir="ltr"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+          role="link"
+        >
+          <span>Cookie Policy</span>
+        </a>
+        <a
+          href="https://twitter.com/privacy"
+          dir="ltr"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+          role="link"
+        >
+          <span>Accessibility</span>
+        </a>
+        <a
+          href="https://support.twitter.com/articles/20170514"
+          dir="ltr"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+          role="link"
+        >
+          <span>Ads info</span>
+        </a>
+        <a
+          href="https://help.twitter.com/resources/accessibility"
+          dir="ltr"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+          role="link"
+        >
+          <span>More ...</span>
+        </a>
+        <div dir="ltr">
+          <span>© 2024 X Corp.</span>
+        </div>
+      </footer>
+    </aside>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>(1) Home / X</title>
+    <link rel="icon" type="image/x-icon" href="images/x.avif" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    {% load static %} {% load custom_filters %}
+    <link rel="stylesheet" href="{% static 'home.css' %}" />
+    <link rel="stylesheet" href="{% static 'test.css' %}" />
+    <script src="{% static 'home.js' %}"></script>
+  </head>
+<body style="background-color:white">asd
+    <nav>{% block navbar %}{% endblock %}</nav>
+    <div id="content">
+        <article>{% block tweets %}{% endblock %}</article>
+        <aside>{% block latest %}{% endblock %}</aside>
+    </div>
+</body>
+</html>
