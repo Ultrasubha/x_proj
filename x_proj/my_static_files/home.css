@@ -90,7 +90,7 @@ a:active {
 
   input[type="text"] {
     background-color: transparent;
-    color:white;
+    color: white;
     border: none;
     outline: none;
     padding-left: 1rem;
@@ -125,7 +125,7 @@ a:active {
   .postLabels > * {
     width: 50%;
   }
-  
+
   .postLabels > div:nth-child(2) {
     display: flex;
     justify-content: flex-end;
@@ -250,6 +250,14 @@ a:active {
   }
 
   .mediaContent {
+    width: 100%;
+  }
+
+  .tweetWithoutUserImg{
+    width: 100%;
+  }
+
+  .postInteractIcons {
     width: 100%;
   }
 
