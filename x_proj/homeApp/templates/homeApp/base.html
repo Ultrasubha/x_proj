@@ -19,11 +19,7 @@
 <body onload="modifyUrl()">
     <nav>{% include 'homeApp/navbar.html' %}</nav>
     <article class="faintBorder contentSection" id="tweets">{% include 'homeApp/tweets.html' %}</article>
-    <article class="faintBorder contentSection" id="ProfileBar">{% include 'homeApp/profile.html' %}</article>
+    <article class="faintBorder contentSection" id="Profile">{% include 'homeApp/profile.html' %}</article>
     <aside>{% include 'homeApp/latest.html' %}</aside>
-    {% comment %} <div id="content">
-        <article>{% block tweets %}{% endblock %}</article>
-        <aside>{% block latest %}{% endblock %}</aside>
-    </div> {% endcomment %}
 </body>
 </html>
