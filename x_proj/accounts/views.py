@@ -29,7 +29,8 @@ def signup_view(request):
         request.POST["name"], request.POST["email"], request.POST["password"]
     )
     user.save()
-    return redirect("homeApp/home.html")
+    login(request, user)
+    return redirect("/home")
 
 
 def logout_view(request):
