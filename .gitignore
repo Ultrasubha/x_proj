@@ -1,5 +1,7 @@
 tempCodeRunnerFile.py
-*sqlite3
+/accounts/migrations/
+/homeApp/migrations
+*.sqlite3
 media/
 boilerPlates/
 # Byte-compiled / optimized / DLL files
