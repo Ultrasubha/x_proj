@@ -24,6 +24,4 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include('accounts.urls')),
     path('home/', include('homeApp.urls')),
-    path('tweets/', include('tweets.urls')),
-    path('profile/', include('profiles.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
