@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "accounts.apps.AccountsConfig",
     "homeApp.apps.HomeappConfig",
+    'tweets.apps.TweetsConfig',
     'profiles.apps.ProfilesConfig',
     # 'admin_dashboard.apps.AdminDashboardConfig',
     # 'analytics.apps.AnalyticsConfig',
@@ -50,7 +51,6 @@ INSTALLED_APPS = [
     # 'relationships.apps.RelationshipsConfig',
     # 'search.apps.SearchConfig',
     # 'settings.apps.SettingsConfig',
-    # 'tweets.apps.TweetsConfig',
     "rest_framework",
 ]
 

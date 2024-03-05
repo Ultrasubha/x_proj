@@ -12,7 +12,7 @@ function modifyUrl() {
     location.href=modifiedUrl;
   }
 }
-
+//http://localhost:8000/home/#tweets
 // if(trailing[0]=="#"){
 //   if(!sectionRoutes.includes(trailing)){
 //     location.href = "http://localhost:8000/home/#tweets"
