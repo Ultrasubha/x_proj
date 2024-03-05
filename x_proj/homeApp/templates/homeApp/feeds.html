@@ -1,5 +1,4 @@
-{% load custom_filters %}
-{% for post in posts %}
+{% load custom_filters %} {% for post in posts %}
 <section class="feed faintBorder">
   <div class="whiteText farApart">
     <div class="imgContainer">
@@ -26,18 +25,17 @@
           <source src="../../../media/{{ post.media }}" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <!-- Handle other media types or scenarios here -->
-        {% endif %}
-        {% endif %}
+        {% comment %} <!-- Handle other media types or scenarios here -->{% url 'like_post' post.id %} {% endcomment %}
+        {% endif %} {% endif %}
       </div>
       <div class="farApart grayText postInteractIcons">
-        <span class="fa fa-comment-o"></span>
-        <span class="fa fa-retweet"></span>
-        <span class="fa fa-heart-o"></span>
-        <span class="fa fa-bar-chart"></span>
+        <a class="fa fa-comment-o"></a>
+        <a class="fa fa-retweet"></a>
+        <a class="fa fa-heart-o" href=""></a>
+        <a class="fa fa-bar-chart"></a>
         <div class="bookmarkShare">
-          <span class="fa fa-bookmark"></span>
-          <span class="fa fa-upload"></span>
+          <a class="fa fa-bookmark"></a>
+          <a class="fa fa-upload"></a>
         </div>
       </div>
     </div>

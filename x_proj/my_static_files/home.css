@@ -44,10 +44,11 @@ a:active {
     display: flex;
     flex-direction: column;
     width: 15%;
-    height: 100%;
+    height: 100vh;
     padding: 0.5rem 3rem 2rem 6rem;
     font-size: large;
     color: white;
+    overflow: scroll;
   }
 
   nav > * {
@@ -61,7 +62,7 @@ a:active {
 
   article {
     width: 40%;
-    height: 100%;
+    height: 100vh;
   }
 
   .faintBorder {
@@ -95,9 +96,14 @@ a:active {
     background-color: transparent;
     color: white;
     border: none;
+    border-bottom: 1px solid rgb(63, 63, 63);
     outline: none;
     padding-left: 1rem;
   }
+
+  /* input[type="text"]:target {
+    display: block;
+  } */
 
   .posticons {
     display: inline-block;
@@ -123,7 +129,6 @@ a:active {
     display: flex;
     justify-content: space-between;
     padding-top: 0.5rem;
-    border-top: 1px solid rgb(63, 63, 63);
   }
 
   .postLabels > * {
@@ -174,6 +179,7 @@ a:active {
     margin: 0;
     display: flex;
     background-color: black;
+    overflow-y: hidden;
   }
 
   button {
@@ -196,7 +202,7 @@ a:active {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    height: 100%;
+    height: 100vh;
     width: 25%;
     overflow-y: auto;
     padding: 0.5rem 1rem 0rem 1rem;
@@ -331,7 +337,7 @@ a:active {
 
   .contentSection:target {
     display: block;
-    max-height: 100%; /* Set a fixed height for the article and aside */
+    max-height: 100vh; /* Set a fixed height for the article and aside */
     overflow: auto;
   }
 }

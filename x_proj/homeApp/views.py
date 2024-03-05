@@ -29,6 +29,22 @@ def create_page(request):
     # can use to handle errors
     # return render(request, 'your_template.html')
 
+# @login_required
+def like_post(request, post_id):
+    logged_user = request.user
+    post = Post.objects.get(id=post_id)
+
+    if logged_user in post.liked_by.all():
+
+        post.likes_count -= 1
+        post.liked_by.remove(logged_user)
+    else:
+
+        post.likes_count += 1
+        post.liked_by.add(logged_user)
+
+    post.save()
+    return redirect("/home")
 
 # def post(self, request, args, id):
 #     post_id = id 

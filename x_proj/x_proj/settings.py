@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     # 'relationships.apps.RelationshipsConfig',
     # 'search.apps.SearchConfig',
     # 'settings.apps.SettingsConfig',
-    "rest_framework",
+    # "rest_framework",
 ]
 
 MIDDLEWARE = [
