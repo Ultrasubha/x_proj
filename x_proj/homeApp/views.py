@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.core.files.storage import FileSystemStorage
 from .models import Post
+from django.http import HttpResponse
 
 
 # @login_required
@@ -28,17 +29,19 @@ def create_page(request):
 
 # @login_required
 def like_post(request, post_id):
-    logged_user = request.user
-    post = Post.objects.get(id=post_id)
+    #logged_user = request.user
+    print("nitin")
+    # post = Post.objects.get(id=post_id)
 
-    if logged_user in post.liked_by.all():
+    # if logged_user in post.liked_by.all():
 
-        post.likes_count -= 1
-        post.liked_by.remove(logged_user)
-    else:
+    #     post.likes_count -= 1
+    #     post.liked_by.remove(logged_user)
+    # else:
 
-        post.likes_count += 1
-        post.liked_by.add(logged_user)
+    #     post.likes_count += 1
+    #     post.liked_by.add(logged_user)
 
-    post.save()
-    return redirect("/home")
+    # post.save()
+    # return redirect("/home")
+    return HttpResponse('hisdfok')
