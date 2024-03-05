@@ -26,9 +26,6 @@ def create_page(request):
         newPost.save()
         return redirect("/home")
 
-    # can use to handle errors
-    # return render(request, 'your_template.html')
-
 # @login_required
 def like_post(request, post_id):
     logged_user = request.user
@@ -45,12 +42,3 @@ def like_post(request, post_id):
 
     post.save()
     return redirect("/home")
-
-# def post(self, request, args, id):
-#     post_id = id 
-#     try:    # If the user already liked that post: unlike it.. delete the entry in the Likes model
-#         like_object = Like.objects.get(user = request.user, post_id = post_id)
-#         like_object.delete()
-#     except Exception as e:  # otherwise: lite it ... create an entry in the Likes model
-#         Like.objects.create(user = request.user, post_id = post_id)  # django will handle it
-#     return redirect(request.META.get('HTTP_REFERER'))
