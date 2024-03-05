@@ -5,246 +5,55 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> X. It’s what’s happening / X </title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>X. It’s what’s happening / X</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     {% load static %}
-    <link rel="icon" type="image/x-icon" href="{% static 'images/x.avif' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{% static 'login.css' %}">
-    <script src="{% static 'login.js' %}"></script>
-</head>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/x.avif' %}" />
+    <link rel="stylesheet" href="{% static 'account.css' %}" />
+    <script src="{% static 'account.js' %}"></script>
+  </head>
 
-<body>
+  <body>
     <article class="centerPe dadaji">
-        <div id="overlay"></div>
-        <div id="newUser">
-            <header class="userHeader">
-                <span id="closeBtn" onclick="hideOnAccountCreate()">&times;</span>
-                <div>𝕏</div>
-            </header>
-            <form id="userForm" action="signup-url" method="post">
-                {% csrf_token %}
-                <h2>Create your account</h2>
-                <input type="text" placeholder="UserName" name="name">
-                <input type="email" placeholder="Email" name="email">
-                <input type="password" placeholder="password" name="password">
-                <input class="usePhnInstead" type="button" value="Use phone instead">
-                <div  class="dobGuidelines">
-                    <b>Date of birth</b>
-                    <div class="grayText">This will not be shown publicly. Confirm your own age, even if this account is for a business, a pet, or something else.</div>
-                </div>
-                <div class="dob">
-                    <input id="month" type="text" placeholder="Month">
-                    <input id="day" type="text" placeholder="Day">
-                    <input id="year" type="text" placeholder="Year">                  
-                </div>
-                <button class="createUserNxtButton centerPe">
-                    Next
+      <div id="overlay"></div>
+      {% include 'accounts/signUp.html' %} {% include 'accounts/signIn.html' %}
+      <article class="sabkaBaap_n_footer">
+        <section class="sabkaBaap">
+          <aside class="asidetwitter">𝕏</aside>
+          <article class="loginArticle">
+            <div class="happeningNow whiteText">Happening now</div>
+            <div class="joinToday whiteText">Join today.</div>
+            <nav>
+              <form class="initialForm">
+                {% include 'accounts/thirdPartySignIn.html' %}
+                <button
+                  class="roundedBtn createAccountBtn whiteText noBorder biggerText"
+                  type="button"
+                  onclick="onAccountCreate()"
+                >
+                  <b>Create Account</b>
                 </button>
-            </form>
-        </div>
-        <div id="existingUser">
-            <header class="userHeader">
-                <span id="closeBtn" onclick="hideOnSignInWindow()">&times;</span>
-                <div>𝕏</div>
-            </header>
-            <div class="centerPe">
-                <form id="userForm" class="signInPadding" action="login-url" method="post">
-                    {% csrf_token %}
-                    <h2>Sign in to X</h2>
-                    <button class="roundedBtn noBorder googleSignIn" type="button" onclick="onSignIn()">
-                        <div>
-                            <div class="googleUserPanchnama">
-                                <div class="circular-container">
-                                    <img src="{% static 'images/neko.jpg' %}" alt="User Image">
-                                </div>
-                                <div class="googleUserPanchnamaTexts">
-                                    <div>Sign in as Subhadeep</div>
-                                    <div class="grayText">ultrasubha@gmail.com ⌄</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="circular-container">
-                            <img src="{% static 'images/google.png' %}" alt="Sasta Google">
-                        </div>
-                    </button>
-                    <button class="roundedBtn noBorder biggerText centerPe" type="button" onclick="onSignIn()">
-                        <i class="fa fa-apple"></i>
-                        <b>Sign in with Apple</b>
-                    </button>
-                    <div class="orField">
-                        <div>
-                            <hr>
-                        </div>
-                        <i class="whiteText">or</i>
-                        <div>
-                            <hr>
-                        </div>
-                    </div>
-                    <input type="text" placeholder="Phone, email, or username" name="name">
-                    <input type="password" placeholder="password" name="password">
-                    <button class="roundedBtn noBorder biggerText centerPe" type="submit">
-                        <b>Next</b>
-                    </button>
-                    <button class="frgtPasswd roundedBtn whiteText noBorder biggerText centerPe" type="button">
-                        <b>Forgot password?</b>
-                    </button>
-                    <div class="grayText">Don't have an account? <a href="">Sign up</a></div>
-                </form>
-            </div>
-        </div>
-        <article class="sabkaBaap_n_footer">
-            <section class="sabkaBaap">
-                <aside class="asidetwitter">𝕏</aside>
-                <article class="loginArticle">
-                    <div class="happeningNow whiteText"> Happening now</div>
-                    <div class="joinToday whiteText">Join today.</div>
-                    <nav>
-                        <form class="initialForm">
-                            <button class="roundedBtn noBorder googleSignIn" type="button" onclick="onSignIn()">
-                                <div>
-                                    <div class="googleUserPanchnama">
-                                        <div class="circular-container">
-                                            <img src="{% static 'images/neko.jpg' %}" alt="User Image">
-                                        </div>
-                                        <div class="googleUserPanchnamaTexts">
-                                            <div>Sign in as Subhadeep</div>
-                                            <div>ultrasubha@gmail.com ⌄</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="circular-container">
-                                    <img src="{% static 'images/google.png' %}" alt="Sasta Google">
-                                </div>
-                            </button>
-                            <button class="roundedBtn noBorder biggerText" type="button" onclick="onSignIn()">
-                                <i class="fa fa-apple"></i>
-                                <b>Sign up with Apple</b>
-                            </button>
-                            <div class="orField">
-                                <div>
-                                    <hr>
-                                </div>
-                                <i class="whiteText">or</i>
-                                <div>
-                                    <hr>
-                                </div>
-                            </div>
-                            <button class="roundedBtn createAccountBtn whiteText noBorder biggerText" type="button"
-                                onclick="onAccountCreate()">
-                                <b>Create Account</b>
-                            </button>
-                            <div class="grayText">
-                                By signing up, you agree to the
-                                <a href="https://about.twitter.com" dir="ltr" rel="noopener noreferrer nofollow"
-                                    target="_blank" role="link">
-                                    <span>Terms of Service</span>
-                                </a>
-                                and
-                                <a href="https://about.twitter.com" dir="ltr" rel="noopener noreferrer nofollow"
-                                    target="_blank" role="link">
-                                    <span>Privacy Policy</span>
-                                </a>
-                                , including
-                                <a href="https://about.twitter.com" dir="ltr" rel="noopener noreferrer nofollow"
-                                    target="_blank" role="link">
-                                    <span>Cookie Use.</span>
-                                </a>
-                            </div>
-                            <h3 class="whiteText biggerText">Already have an account?</h3>
-                            <button class="roundedBtn signInBtn biggerText" type="button" onclick="onSignIn()">
-                                <b>Sign in</b>
-                            </button>
-                        </form>
-                    </nav>
-                </article>
-            </section>
-            <footer class="centerPe" aria-label="Footer" role="navigation">
-                <a href="https://about.twitter.com" dir="ltr" rel="noopener noreferrer nofollow" target="_blank"
-                    role="link">
-                    <span>About</span>
-                </a>
-                <a href="https://help.twitter.com/using-x/download-the-x-app" dir="ltr"
-                    rel="noopener noreferrer nofollow" target="_blank" role="link">
-                    <span>Download the X app</span>
-                </a>
-                <a href="https://help.twitter.com" dir="ltr" rel="noopener noreferrer nofollow" target="_blank"
-                    role="link">
-                    <span>Help Center</span>
-                </a>
-                <a href="https://twitter.com/tos" dir="ltr" rel="noopener noreferrer nofollow" target="_blank"
-                    role="link">
-                    <span>Terms of Service</span>
-                </a>
-                <a href="https://twitter.com/privacy" dir="ltr" rel="noopener noreferrer nofollow" target="_blank"
-                    role="link">
-                    <span>Privacy Policy</span>
-                </a>
-                <a href="https://support.twitter.com/articles/20170514" dir="ltr" rel="noopener noreferrer nofollow"
-                    target="_blank" role="link">
-                    <span>Cookie Policy</span>
-                </a>
-                <a href="https://help.twitter.com/resources/accessibility" dir="ltr" rel="noopener noreferrer nofollow"
-                    target="_blank" role="link">
-                    <span>Accessibility</span>
-                </a>
-                <a href="" dir="ltr" rel="noopener noreferrer nofollow" target="_blank" role="link">
-                    <span>Ads info</span>
-                </a>
-                <a href="" dir="ltr" rel="noopener noreferrer nofollow" target="_blank" role="link">
-                    <span>Blog</span>
-                </a>
-                <a href="" dir="ltr" rel="noopener noreferrer nofollow" target="_blank" role="link">
-                    <span>Status</span>
-                </a>
-                <a href="" dir="ltr" rel="noopener noreferrer nofollow" target="_blank" role="link">
-                    <span>Careers</span>
-                </a>
-                <a href="" dir="ltr" rel="noopener noreferrer nofollow" target="_blank" role="link">
-                    <span>Brand Resources</span>
-                </a>
-                <a href="" dir="ltr" rel="noopener noreferrer nofollow" target="_blank" role="link">
-                    <span>Advertising</span>
-                </a>
-                <a href="" dir="ltr" rel="noopener noreferrer nofollow" target="_blank" role="link">
-                    <span>Marketing</span>
-                </a>
-                <a href="" dir="ltr" rel="noopener noreferrer nofollow" target="_blank" role="link">
-                    <span>X for Business</span>
-                </a>
-                <a href="" dir="ltr" rel="noopener noreferrer nofollow" target="_blank" role="link">
-                    <span>Developers</span>
-                </a>
-                <a href="" dir="ltr" rel="noopener noreferrer nofollow" target="_blank" role="link">
-                    <span>Directory</span>
-                </a>
-                <a href="" dir="ltr" rel="noopener noreferrer nofollow" target="_blank" role="link">
-                    <span>Settings</span>
-                </a>
-                <div dir="ltr">
-                    <span>© 2024 X Corp.</span>
-                </div>
-            </footer>
-        </article>
+                {% include 'accounts/termsConditions.html' %}
+                <h3 class="whiteText biggerText">Already have an account?</h3>
+                <button
+                  class="roundedBtn signInBtn biggerText"
+                  type="button"
+                  onclick="onSignIn()"
+                >
+                  <b>Sign in</b>
+                </button>
+              </form>
+            </nav>
+          </article>
+        </section>
+        {% include 'accounts/footer.html' %}
+      </article>
     </article>
-</body>
-
+  </body>
 </html>
-<!--
-    <article>	    Defines independent, self-contained content
-    <aside>	        Defines content aside from the page content
-    <details>	    Defines additional details that the user can view or hide
-    <figcaption>	Defines a caption for a <figure> element
-    <figure>	    Specifies self-contained content, like illustrations, diagrams, photos, code listings, etc.
-    <footer>	    Defines a footer for a document or section
-    <header>	    Specifies a header for a document or section
-    <main>	        Specifies the main content of a document
-    <mark>	        Defines marked/highlighted text
-    <nav>	        Defines navigation links
-    <section>	    Defines a section in a document
-    <summary>	    Defines a visible heading for a <details> element
-    <time>	        Defines a date/time
--->

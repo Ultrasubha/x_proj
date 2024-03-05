@@ -1,0 +1,26 @@
+<div id="newUser">
+    <header class="userHeader">
+        <span id="closeBtn" onclick="hideOnAccountCreate()">&times;</span>
+        <div>𝕏</div>
+    </header>
+    <form id="userForm" action="signup-url" method="post">
+        {% csrf_token %}
+        <h2>Create your account</h2>
+        <input type="text" placeholder="UserName" name="name">
+        <input type="email" placeholder="Email" name="email">
+        <input type="password" placeholder="password" name="password">
+        <input class="usePhnInstead" type="button" value="Use phone instead">
+        <div  class="dobGuidelines">
+            <b>Date of birth</b>
+            <div class="grayText">This will not be shown publicly. Confirm your own age, even if this account is for a business, a pet, or something else.</div>
+        </div>
+        <div class="dob">
+            <input id="month" type="text" placeholder="Month">
+            <input id="day" type="text" placeholder="Day">
+            <input id="year" type="text" placeholder="Year">                  
+        </div>
+        <button class="createUserNxtButton centerPe">
+            Next
+        </button>
+    </form>
+</div>
