@@ -24,9 +24,7 @@
           <source src="../../../media/{{ post.media }}" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        {% comment %}
-        <!-- Handle other media types or scenarios here -->{% url 'like_post'
-        post.id %} {% endcomment %} {% endif %} {% endif %}
+        {% endif %} {% endif %}
       </div>
       <div class="farApart grayText postInteractIcons">
         <a class="fa fa-comment-o"></a>

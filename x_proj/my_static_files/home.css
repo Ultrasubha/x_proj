@@ -82,6 +82,10 @@
     padding: 1rem;
   }
 
+  .stickyUpper > *:hover {
+    background-color: rgba(63, 63, 63, 0.4);
+  }
+
   .stickyUpperTexts {
     color: #fff;
     font-weight: bold;
@@ -340,4 +344,33 @@
     display: block;
     max-height: 100vh; /* Set a fixed height for the article and aside */
     overflow: auto;
+  }
+
+  .fa-bookmark:hover, .fa-upload:hover,.fa-comment-o:hover, .fa-bar-chart:hover {
+    color:dodgerblue;
+  }
+
+  .fa-retweet:hover {
+    color:green;
+  }
+
+  .fa-heart-o:hover {
+    color:red;
+  }
+
+  /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+  body::-webkit-scrollbar,
+  nav::-webkit-scrollbar,
+  aside::-webkit-scrollbar,
+  article::-webkit-scrollbar {
+      display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge, and Firefox */
+  body,
+  nav,
+  aside,
+  article {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
   }
