@@ -25,13 +25,29 @@
           <source src="../../../media/{{ post.media }}" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        {% comment %} <!-- Handle other media types or scenarios here -->{% url 'like_post' post.id %} {% endcomment %}
-        {% endif %} {% endif %}
+        {% comment %}
+        <!-- Handle other media types or scenarios here -->{% url 'like_post'
+        post.id %} {% endcomment %} {% endif %} {% endif %}
       </div>
       <div class="farApart grayText postInteractIcons">
         <a class="fa fa-comment-o"></a>
         <a class="fa fa-retweet"></a>
-        <a class="fa fa-heart-o" href="/home/like_post/1"></a>
+
+        {% if user.is_authenticated %} {% if post.id in liked_post_ids %}
+        <a
+          style="color: red"
+          class="fa fa-heart"
+          href="/home/like_post/{{ post.id }}"
+          >{{ post.likes_count }}</a
+        >
+        {% else %}
+        <a class="fa fa-heart-o" href="/home/like_post/{{ post.id }}"
+          >{{ post.likes_count }}</a
+        >
+        {% endif %} {% else %}
+        <h1>Login to like this post.</h1>
+        {% endif %}
+
         <a class="fa fa-bar-chart"></a>
         <div class="bookmarkShare">
           <a class="fa fa-bookmark"></a>
