@@ -1,6 +1,5 @@
 tempCodeRunnerFile.py
-accounts/migrations/
-homeApp/migrations
+**/migrations/
 *.sqlite3
 media/
 boilerPlates/
