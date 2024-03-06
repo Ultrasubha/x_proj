@@ -191,6 +191,8 @@
     display: flex;
     background-color: black;
     overflow-y: hidden;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
+  Helvetica, Arial, "Lucida Grande", sans-serif;
   }
 
   button {
