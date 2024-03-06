@@ -42,3 +42,11 @@ document.addEventListener('click', function (event) {
       logOutDiv.style.display = 'none';
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  var inputElement = document.getElementById("mesg");
+
+  inputElement.addEventListener("click", function () {
+    document.getElementById("whoCanReply").style.display = "block";
+  });
+});
