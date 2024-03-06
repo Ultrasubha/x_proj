@@ -75,6 +75,11 @@ function displayMedia() {
 
       if (mediaElement) {
         mediaElement.style.maxWidth = "100%";
+        mediaElement.style.borderRadius = "10px"; // Adjust the radius as needed
+        mediaElement.style.maxHeight = "50vh"; // Display only 50% of the height
+        mediaElement.style.objectFit = "cover"; // Ensure aspect ratio is maintained
+        mediaElement.style.overflowY = "auto"; // Enable vertical scroll if needed
+
         mediaContainer.innerHTML = "";
         mediaContainer.appendChild(mediaElement);
         mediaContainer.style.display = "block";
