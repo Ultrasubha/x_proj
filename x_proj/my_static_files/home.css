@@ -47,7 +47,7 @@
     width: 15%;
     height: 100vh;
     padding: 0.5rem 3rem 2rem 6rem;
-    font-size: large;
+    font-size: x-large;
     color: white;
     overflow: scroll;
   }
@@ -353,15 +353,25 @@
   .logOutSection {
     display: none;
     background-color: black;
-    padding: 1rem;
+    font-size: large;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     border: none;
     border-radius: 1rem;
     box-shadow: 0 0 8px rgba(150, 150, 150, 0.7);
     position: absolute;
     left: 6%;
     bottom: 11rem;
-    width: 15rem;
     z-index: 3;
+  }
+
+  .logOutSection * {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .logOutSection *:hover {
+    background-color:  rgb(33, 33, 33);
   }
 
   .fa-bookmark:hover, .fa-upload:hover,.fa-comment-o:hover, .fa-bar-chart:hover {
