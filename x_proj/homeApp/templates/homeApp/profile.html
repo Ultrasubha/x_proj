@@ -1,7 +1,7 @@
 {% load static %} {% load custom_filters %}
 <section class="stickyUpper onlyFlex">
-    <span class="fa fa-arrow-left whiteText"></span>
-    <div class="name">Name</div>
+    <a href="#tweets"><span class="fa fa-arrow-left whiteText"></span></a>
+    <div class="name"> {{ user }}</div>
 </section>
 <section>
     <div class="coverPhoto chaloLastMein columnApart test2">
@@ -16,8 +16,8 @@
 
         <div class="columnApart">
             <div>
-                <div class="name">Name</div>
-                <div class="smallText grayText">@username</div>
+                <div class="name">{{ user }}</div>
+                <div class="smallText grayText">@{{ user }}</div>
             </div>
             <div class="smallText grayText">
                 <span class="fa fa-calendar"></span>
