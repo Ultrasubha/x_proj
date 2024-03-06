@@ -273,7 +273,7 @@
   }
 
   .columnApart > * {
-      padding: 0.25rem;
+      padding: 0.5rem;
   }
 
   .imgContainer {
@@ -353,7 +353,7 @@
   .logOutSection {
     display: none;
     background-color: black;
-    font-size: large;
+    font-size: 21px;
     padding-top: 1rem;
     padding-bottom: 1rem;
     border: none;
@@ -366,8 +366,7 @@
   }
 
   .logOutSection * {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
   }
 
   .logOutSection *:hover {
