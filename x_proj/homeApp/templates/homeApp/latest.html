@@ -1,7 +1,8 @@
 {% load static %}
-<div class="searchBar cards">
+<div class="searchBar onlyFlex cards">
   <span class="fa fa-search grayText"></span>
-  <input class="" type="text" name="search" id="search" placeholder="search" />
+  <input type="text" name="search" id="search" placeholder="search"  oninput="toggleClearButton()" />
+  <div class="nodisplay circle cross" id="clearButton" onclick="clearSearch()">&#x2715;</div>
 </div>
 <div class="onePad cards">
   <div class="semiLargeText weighty whiteText">Subscribe to Premium</div>

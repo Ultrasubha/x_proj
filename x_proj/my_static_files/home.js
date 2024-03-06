@@ -16,10 +16,10 @@ function modifyUrl() {
   let urlArr = currentUrl.split("/");
   let section = urlArr[urlArr.length - 2];
   let trailing = urlArr[urlArr.length - 1];
-  
-  if (section === "home" && trailing=="") {
+
+  if (section === "home" && trailing == "") {
     let modifiedUrl = currentUrl + "#tweets";
-    location.href=modifiedUrl;
+    location.href = modifiedUrl;
   }
 
   // if ((trailing[0] == "#") && (!sectionRoutes.includes(trailing))) {
@@ -28,20 +28,28 @@ function modifyUrl() {
   // }
 }
 
+// Logout window show/hide functionality
+
 function toggleLogOut() {
-  var logOutDiv = document.querySelector('.logOutSection');
-  logOutDiv.style.display = (logOutDiv.style.display === 'none' || logOutDiv.style.display === '') ? 'block' : 'none';
+  var logOutDiv = document.querySelector(".logOutSection");
+  logOutDiv.style.display =
+    logOutDiv.style.display === "none" || logOutDiv.style.display === ""
+      ? "block"
+      : "none";
 }
 
 document.addEventListener('click', function (event) {
   var logOutDiv = document.querySelector('.logOutSection');
-  var anchorElement = document.querySelector('.onlyFlex');
+  var toggleLogOutAnchor = document.getElementById('toggleLogOutAnchor');
 
   // Check if the click is outside the anchor element and the logOutSection div
-  if (event.target !== anchorElement && !anchorElement.contains(event.target) && event.target !== logOutDiv && !logOutDiv.contains(event.target)) {
+  if (event.target !== toggleLogOutAnchor && !toggleLogOutAnchor.contains(event.target) && event.target !== logOutDiv && !logOutDiv.contains(event.target)) {
       logOutDiv.style.display = 'none';
   }
 });
+
+
+// Post Privacy functionality
 
 document.addEventListener("DOMContentLoaded", function () {
   var inputElement = document.querySelector(".postHere");
@@ -52,6 +60,21 @@ document.addEventListener("DOMContentLoaded", function () {
     postLabelsElement.style.borderTop = "1px solid rgb(64, 64, 64)";
   });
 });
+
+// Text area increase height functionality
+
+document.addEventListener("input", function (e) {
+  if (e.target.tagName.toLowerCase() === "textarea") {
+    autoResizeTextarea(e.target);
+  }
+});
+
+function autoResizeTextarea(textarea) {
+  textarea.style.height = "auto";
+  textarea.style.height = textarea.scrollHeight + "px";
+}
+
+// Media display while posting and closing or editing functionality
 
 function displayMedia() {
   var input = document.getElementById("media");
@@ -100,7 +123,7 @@ function displayMedia() {
 
         // Create close button
         var closeButton = document.createElement("button");
-        closeButton.innerHTML = '<i class="fa fa-times"></i>';
+        closeButton.innerHTML = '&#x2715;';
         applyButtonStyles(closeButton);
         closeButton.style.right = "10px";
         closeButton.addEventListener("click", function () {
@@ -135,3 +158,25 @@ function applyButtonStyles(button) {
   });
 }
 
+// Search button clearText functionality
+
+function toggleClearButton() {
+  var inputElement = document.getElementById("search");
+  var clearButton = document.getElementById("clearButton");
+
+  if (inputElement.value.trim() !== "") {
+    clearButton.style.display = "block";
+    clearButton.style.color = "black";
+    clearButton.style.textAlign = "center";
+  } else {
+    clearButton.style.display = "none";
+  }
+}
+
+function clearSearch() {
+  var inputElement = document.getElementById("search");
+  var clearButton = document.getElementById("clearButton");
+
+  inputElement.value = "";
+  clearButton.style.display = "none";
+}
