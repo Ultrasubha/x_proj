@@ -44,7 +44,7 @@ document.addEventListener('click', function (event) {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  var inputElement = document.getElementById("mesg");
+  var inputElement = document.querySelector(".postHere");
 
   inputElement.addEventListener("click", function () {
     document.getElementById("whoCanReply").style.display = "block";
@@ -74,6 +74,7 @@ function displayMedia() {
       }
 
       if (mediaElement) {
+        mediaElement.style.maxWidth = "100%";
         mediaContainer.innerHTML = "";
         mediaContainer.appendChild(mediaElement);
         mediaContainer.style.display = "block";
