@@ -50,3 +50,36 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("whoCanReply").style.display = "block";
   });
 });
+
+function displayMedia() {
+  var input = document.getElementById("media");
+  var mediaContainer = document.getElementById("mediaContainer");
+
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      var mediaType = input.files[0].type.split("/")[0];
+      var mediaElement;
+
+      if (mediaType === "image") {
+        mediaElement = document.createElement("img");
+        mediaElement.src = e.target.result;
+        mediaElement.alt = "Uploaded Image";
+      } else if (mediaType === "video") {
+        mediaElement = document.createElement("video");
+        mediaElement.src = e.target.result;
+        mediaElement.controls = true;
+        mediaElement.innerText = "Your browser does not support the video tag.";
+      }
+
+      if (mediaElement) {
+        mediaContainer.innerHTML = "";
+        mediaContainer.appendChild(mediaElement);
+        mediaContainer.style.display = "block";
+      }
+    };
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}

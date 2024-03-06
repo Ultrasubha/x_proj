@@ -313,6 +313,11 @@
     color: dodgerblue;
   }
 
+  #mediaContainer {
+    display: none;
+    width: fit-content;
+  }
+
   .mediaContent {
     width: 100%;
   }
