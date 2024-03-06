@@ -52,13 +52,19 @@
     overflow: scroll;
   }
 
-  nav > * {
+  .iconsTexts > * {
     padding: 0.7rem;
   }
 
   nav > *:hover {
-    background-color: rgb(64, 64, 64);
+    background-color:  rgb(33, 33, 33);
     border-radius: 5rem;
+    /* padding-right: 2rem; */
+    width: fit-content;
+  }
+
+  .logOutBtn:hover {
+    width: auto;
   }
 
   article {
@@ -83,7 +89,7 @@
   }
 
   .stickyUpper > *:hover {
-    background-color: rgba(63, 63, 63, 0.4);
+    background-color: rgba(33, 33, 33, 0.4);
   }
 
   .stickyUpperTexts {
@@ -270,6 +276,12 @@
     padding: 0.5rem;
   }
 
+  .wellCentered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .farApart {
     display: flex;
     justify-content: space-between;
@@ -360,17 +372,25 @@
 
   .logOutSection {
     display: none;
-    background-color: black;
-    font-size: 21px;
+    position: absolute;
+    left: 6%;
+    bottom: 9.5rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    background-color: black;
+    font-size: 21px;
     border: none;
     border-radius: 1rem;
     box-shadow: 0 0 8px rgba(150, 150, 150, 0.7);
-    position: absolute;
-    left: 6%;
-    bottom: 6rem;
     z-index: 3;
+  }
+
+  .logOutSection * {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+  }
+
+  .logOutSection *:hover {
+    background-color:  rgb(33, 33, 33);
   }
 
   #whoCanReply {
@@ -383,15 +403,7 @@
   }
 
   #whoCanReply:hover {
-    background-color: rgb(6, 14, 29);
-  }
-
-  .logOutSection * {
-    padding: 0.5rem 1rem 0.5rem 1rem;
-  }
-
-  .logOutSection *:hover {
-    background-color:  rgb(33, 33, 33);
+    background-color: rgb(6, 12, 20);
   }
 
   .fa-bookmark:hover, .fa-upload:hover,.fa-comment-o:hover, .fa-bar-chart:hover {
