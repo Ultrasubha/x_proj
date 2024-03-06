@@ -21,3 +21,8 @@ function modifyUrl() {
     location.href = "http://localhost:8000/home/#tweets"
   }
 }
+
+function toggleLogOut() {
+  var logOutDiv = document.querySelector('.logOutSection');
+  logOutDiv.style.display = (logOutDiv.style.display === 'none' || logOutDiv.style.display === '') ? 'block' : 'none';
+}

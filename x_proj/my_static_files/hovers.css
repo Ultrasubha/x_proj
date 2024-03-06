@@ -1,0 +1,28 @@
+nav > *:hover {
+  background-color: rgb(64, 64, 64);
+  border-radius: 5rem;
+}
+
+.stickyUpper > *:hover {
+  background-color: rgba(63, 63, 63, 0.4);
+}
+
+a:hover {
+  color: inherit;
+  background-color: inherit;
+}
+
+.fa-bookmark:hover,
+.fa-upload:hover,
+.fa-comment-o:hover,
+.fa-bar-chart:hover {
+  color: dodgerblue;
+}
+
+.fa-retweet:hover {
+  color: green;
+}
+
+.fa-heart-o:hover {
+  color: red;
+}

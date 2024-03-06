@@ -351,12 +351,8 @@
   }
 
   .logOutSection {
-    /* display: none;:target */
-  }
-
-  .logOutSection {
+    display: none;
     background-color: black;
-    display: block;
     padding: 1rem;
     border: none;
     border-radius: 1rem;
