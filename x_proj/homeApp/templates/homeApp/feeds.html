@@ -46,7 +46,9 @@
         <h1>Login to like this post.</h1>
         {% endif %}
 
-        <a class="fa fa-bar-chart"></a>
+        <a class="fa fa-bar-chart"> 
+          {% if posts|length > 0 %} {{ posts|length }} {% endif %}
+        </a>
         <div class="bookmarkShare">
           <a class="fa fa-bookmark"></a>
           <a class="fa fa-upload"></a>

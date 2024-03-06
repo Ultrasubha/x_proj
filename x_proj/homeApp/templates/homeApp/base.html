@@ -17,7 +17,7 @@
     <script src="{% static 'home.js' %}" defer></script>
   </head>
 <body onload="modifyUrl()">
-    <nav>{% include 'homeApp/navbar.html' %}</nav>
+    {% include 'homeApp/navbar.html' %}
     <article class="faintBorder contentSection" id="tweets">{% include 'homeApp/tweets.html' %}</article>
     <article class="faintBorder contentSection" id="Profile">{% include 'homeApp/profile.html' %}</article>
     <aside>{% include 'homeApp/latest.html' %}</aside>

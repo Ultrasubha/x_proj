@@ -36,4 +36,4 @@ def signup_view(request):
 def logout_view(request):
     logout(request)
     #messages.success(request, "Logout successful.")
-    return redirect("accounts/accounts.html")
+    return redirect("/")
