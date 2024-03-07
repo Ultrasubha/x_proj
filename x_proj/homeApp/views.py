@@ -54,15 +54,15 @@ def get_top_phrases_with_priority(top_count=4):
     word_counts = Counter()
     exclude_words = ["this", "that", "the", "is", "a", "with", "and", "should", "be", "has", "no", "i", "am", "you", "your"]
     exclude_words += [words.capitalize() for words in exclude_words]
-    exclude_words += ["#", "!!!"]
+    exclude_words += ["#", "!!!", ":)"]
     
     for sentence in sentences:
         words = sentence.split()
         for word in words:
+            word = word.lower()
             if word not in exclude_words:
                 if word[0] == "#":
-                    word = word[1:]
-                    word_counts[word] += 2  # Give extra priority
+                    word_counts[word[1:]] += 2  # Give extra priority
                 else:
                     word_counts[word] += 1
     return dict(word_counts.most_common(top_count))
