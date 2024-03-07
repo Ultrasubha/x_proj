@@ -54,6 +54,7 @@ def get_top_phrases_with_priority(top_count=4):
     word_counts = Counter()
     exclude_words = ["this", "that", "the", "is", "a", "with", "and", "should", "be", "has", "no", "i", "am"]
     exclude_words += [words.capitalize() for words in exclude_words]
+    exclude_words += ["!!!"]
     
     for sentence in sentences:
         words = sentence.split()
