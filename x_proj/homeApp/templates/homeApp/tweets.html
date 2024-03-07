@@ -4,64 +4,60 @@
   <div class="stickyUpperTexts">Following</div>
   <span class="fa fa-cog whiteText"></span>
 </section>
-<section class="postHere faintBorder">
-  <form action="createPost" , method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <div class="onlyFlex">
-      <div class="imgContainer">
-        <img src="img_girl.jpg" alt="img" width="100%" height="100%" />
+<form class="postHere faintBorder onlyFlex" action="createPost" , method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="imgContainer">
+    <img src="img_girl.jpg" alt="img" width="100%" height="100%" />
+  </div>
+  <div class="postKSabkuchh">
+    <textarea class="largeText" type="text" name="mesg" id="mesg" placeholder="What is happening?!" required></textarea>
+    <div id="mediaContainer"></div>
+    <div id="whoCanReply">
+      <i class="fa fa-globe"></i> Everyone Can Reply
+    </div>
+    <div class="postLabels">
+      <div>
+        <div>
+          <label for="media" class="posticons">
+            <i class="fa fa-file-image-o"></i>
+          </label>
+          <input type="file" id="media" name="media" accept="image/*, video/*" onchange="displayMedia()" />
+        </div>
+        <div>
+          <label for="media" class="posticons">
+            <i class="fa fa-file-video-o"></i>
+          </label>
+          <input type="file" id="media" name="media" />
+        </div>
+        <div>
+          <label for="media" class="posticons">
+            <i class="fa fa-bar-chart"></i>
+          </label>
+          <input type="file" id="media" name="media" />
+        </div>
+        <div>
+          <label for="media" class="posticons">
+            <i class="fa fa-smile-o"></i>
+          </label>
+          <input type="file" id="media" name="media" />
+        </div>
+        <div>
+          <label for="media" class="posticons">
+            <i class="fa fa-calendar-o"></i>
+          </label>
+          <input type="file" id="media" name="media" />
+        </div>
+        <div>
+          <label for="media" class="posticons">
+            <i class="fa fa-map-marker"></i>
+          </label>
+          <input type="file" id="media" name="media" />
+        </div>
       </div>
-      <div class="postKSabkuchh">
-        <textarea class="largeText" type="text" name="mesg" id="mesg" placeholder="What is happening?!" required></textarea>
-        <div id="mediaContainer"></div>
-        <div id="whoCanReply">
-          <i class="fa fa-globe"></i> Everyone Can Reply
-        </div>
-        <div class="postLabels">
-          <div>
-            <div>
-              <label for="media" class="posticons">
-                <i class="fa fa-file-image-o"></i>
-              </label>
-              <input type="file" id="media" name="media" accept="image/*, video/*" onchange="displayMedia()" />
-            </div>
-            <div>
-              <label for="media" class="posticons">
-                <i class="fa fa-file-video-o"></i>
-              </label>
-              <input type="file" id="media" name="media" />
-            </div>
-            <div>
-              <label for="media" class="posticons">
-                <i class="fa fa-bar-chart"></i>
-              </label>
-              <input type="file" id="media" name="media" />
-            </div>
-            <div>
-              <label for="media" class="posticons">
-                <i class="fa fa-smile-o"></i>
-              </label>
-              <input type="file" id="media" name="media" />
-            </div>
-            <div>
-              <label for="media" class="posticons">
-                <i class="fa fa-calendar-o"></i>
-              </label>
-              <input type="file" id="media" name="media" />
-            </div>
-            <div>
-              <label for="media" class="posticons">
-                <i class="fa fa-map-marker"></i>
-              </label>
-              <input type="file" id="media" name="media" />
-            </div>
-          </div>
-          <div>
-            <button class="fourWidthBtn">Post</button>
-          </div>
-        </div>
+      <div>
+        <button class="fourWidthBtn">Post</button>
       </div>
     </div>
-  </form>
-</section>
+  </div>
+</form>
 {% include 'homeApp/feeds.html' %}
