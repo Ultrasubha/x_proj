@@ -10,9 +10,10 @@ from collections import Counter
 def home_view(request):
     user = request.user
     posts = Post.objects.values('id', 'author__username', 'content', 'media', 'created_at', 'likes_count').order_by('-created_at')
+    userPosts = user.post_set.all()
     phrases = get_top_phrases_with_priority()
     liked_post_ids = user.liked_posts.values_list('id', flat=True) if user.is_authenticated else []
-    return render(request, "homeApp/base.html", {'user': user, 'posts': posts, 'liked_post_ids': liked_post_ids, 'phrases': phrases})
+    return render(request, "homeApp/base.html", {'user': user, 'posts': posts, 'userPosts': userPosts, 'liked_post_ids': liked_post_ids, 'phrases': phrases})
 
 
 def create_page(request):
@@ -50,12 +51,12 @@ def like_post(request, post_id):
 
 def get_top_phrases_with_priority(top_count=4):
     sentences = [post.content for post in Post.objects.all()]
-    
+
     word_counts = Counter()
     exclude_words = ["this", "that", "the", "is", "a", "with", "and", "should", "be", "has", "no", "i", "am", "you", "your"]
     exclude_words += [words.capitalize() for words in exclude_words]
     exclude_words += ["#", "!!!", ":)"]
-    
+
     for sentence in sentences:
         words = sentence.split()
         for word in words:

@@ -60,4 +60,6 @@
     </div>
   </div>
 </form>
-{% include 'homeApp/feeds.html' %}
+{% for post in posts %}
+  {% include 'homeApp/posts.html' %}
+{% endfor %}

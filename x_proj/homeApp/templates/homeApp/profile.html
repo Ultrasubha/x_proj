@@ -47,36 +47,9 @@
         <div>Likes</div>
     </div>
 </section>
-<section class="feed faintBorder">
-    <div class="whiteText farApart">
-        <div class="farApart">
-            <div class="imgContainer">
-                <img src="img_girl.jpg" alt="img" width="100%" height="100%">
-            </div>
-            <div class="">
-                <div class="whiteText">kira 👾@kirawontmiss·5h</div>
-                <div>
-                    These men are not special forces, they are members of the criminal group CJNG, one of the
-                    most powerful and feared cartels in Mexico.
-                </div>
-                <div class="mediaContent">
-                    <img src="../x_proj/media/aaron-burden-Q_5UTUA58Z4-unsplash.jpg" alt="img" width="100%" height="100%">
-                </div>
-                <div class="farApart postInteractIcons">
-                    <span class="fa fa-comment-o"></span>
-                    <span class="fa fa-retweet"></span>
-                    <span class="fa fa-heart-o"></span>
-                    <span class="fa fa-bar-chart"></span>
-                    <div class="bookmarkShare">
-                        <span class="fa fa-bookmark"></span>
-                        <span class="fa fa-upload"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <span class="fa fa-ellipsis-h"></span>
-    </div>
-</section>
+{% for post in userPosts %}
+  {% include 'homeApp/posts.html' %}
+{% endfor %}
 <section class="onePad wtfSection">
     <div class="semiLargeText weighty whiteText">Who to follow</div>
     <div class="farApart">
