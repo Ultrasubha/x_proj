@@ -52,7 +52,7 @@ def get_top_phrases_with_priority(top_count=4):
     sentences = [post.content for post in Post.objects.all()]
     
     word_counts = Counter()
-    exclude_words = ["this", "that", "the", "is", "a", "with", "and", "should", "be", "has", "no", "i", "am"]
+    exclude_words = ["this", "that", "the", "is", "a", "with", "and", "should", "be", "has", "no", "i", "am", "you", "your"]
     exclude_words += [words.capitalize() for words in exclude_words]
     exclude_words += ["#", "!!!"]
     
