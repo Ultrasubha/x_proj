@@ -17,6 +17,8 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     likes_count = models.PositiveIntegerField(default=0)
     liked_by = models.ManyToManyField(User, related_name='liked_posts', blank=True)
+    retweet_count = models.PositiveIntegerField(default=0)
+    retweet_by = models.ManyToManyField(User, related_name='retweet_posts', blank=True)
     #comments = models.ManyToManyField(Comment, related_name='comment_posts', blank=True)
 
     def __str__(self):

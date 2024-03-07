@@ -26,34 +26,7 @@
           </video>
           {% endif %} {% endif %}
         </div>
-        <div class="farApart grayText postInteractIcons">
-          <a class="fa fa-comment-o"></a>
-          <a class="fa fa-retweet"></a>
-  
-          {% if user.is_authenticated %} {% if post.id in liked_post_ids %}
-          <a
-            style="color: red"
-            class="fa fa-heart"
-            href="/home/like_post/{{ post.id }}"
-          >
-            {{ post.likes_count }}</a
-          >
-          {% else %}
-          <a class="fa fa-heart-o" href="/home/like_post/{{ post.id }}">
-            {% if post.likes_count > 0 %} {{ post.likes_count }} {% endif %}
-          </a>
-          {% endif %} {% else %}
-          <h1>Login to like this post.</h1>
-          {% endif %}
-  
-          <a class="fa fa-bar-chart"> 
-            {% if posts|length > 0 %} {{ posts|length }} {% endif %}
-          </a>
-          <div class="bookmarkShare">
-            <a class="fa fa-bookmark"></a>
-            <a class="fa fa-upload"></a>
-          </div>
-        </div>
+        {% include 'homeApp/postInteractIcons.html' %}
       </div>
       <span class="fa fa-ellipsis-h"></span>
     </div>
