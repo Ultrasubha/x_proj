@@ -14,22 +14,16 @@
 </div>
 <div class="onePad cards">
   <div class="semiLargeText weighty whiteText">What’s happening</div>
-  <div class="whiteText">
-    <div class="farApart grayText smallText">
-      <div>Politics Tending</div>
-      <span class="fa fa-ellipsis-h"></span>
+  {% for phrase, postCounts in phrases.items %}
+    <div class="whiteText">
+      <div class="farApart grayText smallText">
+        <div>Politics Tending</div>
+        <span class="fa fa-ellipsis-h"></span>
+      </div>
+      <div>#{{ phrase }}</div>
+      <div class="farApart grayText smallText">{{ postCounts }} posts</div>
     </div>
-    <div>#Alt Balaji</div>
-    <div class="farApart grayText smallText">1,414 posts</div>
-  </div>
-  <div class="whiteText">
-    <div class="farApart grayText smallText">
-      <div>Politics Tending</div>
-      <span class="fa fa-ellipsis-h"></span>
-    </div>
-    <div>#Alt Balaji</div>
-    <div class="farApart grayText smallText">1,414 posts</div>
-  </div>
+  {% endfor %}
   <button>Subscribe</button>
 </div>
 <div class="onePad cards">
