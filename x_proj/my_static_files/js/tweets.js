@@ -1,54 +1,3 @@
-function modifyUrl() {
-  let sectionRoutes = [
-    "#tweets",
-    "#Explore",
-    "#Notifications",
-    "#Messages",
-    "#Grok",
-    "#Lists",
-    "#Communities",
-    "#Premium",
-    "#Profile",
-    "#More",
-    "#Logout",
-  ];
-  let currentUrl = window.location.href;
-  let urlArr = currentUrl.split("/");
-  let section = urlArr[urlArr.length - 2];
-  let trailing = urlArr[urlArr.length - 1];
-
-  if (section === "home" && trailing == "") {
-    let modifiedUrl = currentUrl + "#tweets";
-    location.href = modifiedUrl;
-  }
-
-  // if ((trailing[0] == "#") && (!sectionRoutes.includes(trailing))) {
-  //   let coreIp = urlArr.slice(0, urlArr.length - 2).join('');
-  //   location.href = coreIp + "/home/#tweets"
-  // }
-}
-
-// Logout window show/hide functionality
-
-function toggleLogOut() {
-  var logOutDiv = document.querySelector(".logOutSection");
-  logOutDiv.style.display =
-    logOutDiv.style.display === "none" || logOutDiv.style.display === ""
-      ? "block"
-      : "none";
-}
-
-document.addEventListener('click', function (event) {
-  var logOutDiv = document.querySelector('.logOutSection');
-  var toggleLogOutAnchor = document.getElementById('toggleLogOutAnchor');
-
-  // Check if the click is outside the anchor element and the logOutSection div
-  if (event.target !== toggleLogOutAnchor && !toggleLogOutAnchor.contains(event.target) && event.target !== logOutDiv && !logOutDiv.contains(event.target)) {
-      logOutDiv.style.display = 'none';
-  }
-});
-
-
 // Post Privacy functionality
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -123,7 +72,7 @@ function displayMedia() {
 
         // Create close button
         var closeButton = document.createElement("button");
-        closeButton.innerHTML = '&#x2715;';
+        closeButton.innerHTML = "&#x2715;";
         applyButtonStyles(closeButton);
         closeButton.style.right = "10px";
         closeButton.addEventListener("click", function () {
@@ -156,27 +105,4 @@ function applyButtonStyles(button) {
   button.addEventListener("mouseout", function () {
     button.style.backgroundColor = "rgba(32, 32, 32, 0.7)";
   });
-}
-
-// Search button clearText functionality
-
-function toggleClearButton() {
-  var inputElement = document.getElementById("search");
-  var clearButton = document.getElementById("clearButton");
-
-  if (inputElement.value.trim() !== "") {
-    clearButton.style.display = "block";
-    clearButton.style.color = "black";
-    clearButton.style.textAlign = "center";
-  } else {
-    clearButton.style.display = "none";
-  }
-}
-
-function clearSearch() {
-  var inputElement = document.getElementById("search");
-  var clearButton = document.getElementById("clearButton");
-
-  inputElement.value = "";
-  clearButton.style.display = "none";
 }

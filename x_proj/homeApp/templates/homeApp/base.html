@@ -11,10 +11,13 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
      {% load custom_filters %}
-    <link rel="stylesheet" href="{% static 'home.css' %}" />
-    <link rel="stylesheet" href="{% static 'profile.css' %}">
-    <link rel="stylesheet" href="{% static 'test.css' %}" />
-    <script src="{% static 'home.js' %}" defer></script>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/test.css' %}" />
+    <script src="{% static 'js/home.js' %}" defer></script>
+    <script src="{% static 'js/navbar.js' %}"></script>
+    <script src="{% static 'js/tweets.js' %}"></script>
+    <script src="{% static 'js/latest.js' %}"></script>
   </head>
 <body onload="modifyUrl()">
     {% include 'homeApp/navbar.html' %}

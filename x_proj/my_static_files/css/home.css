@@ -108,10 +108,8 @@
     color: white;
     border: none;
     outline: none;
-    padding-left: 1rem;
     width: 100%;
     resize: none;
-    margin-right: 1rem;
   }
 
   .posticons {
@@ -132,14 +130,17 @@
 
   .postKSabkuchh {
     width: 100%;
-    padding-right: 1rem;
+    /* padding-right: 1rem; */
+    box-sizing: border-box;
   }
 
   .postLabels {
     /* border-top: 1px solid rgb(63, 63, 63); */
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
-    padding-top: 0.5rem;
+    /* padding-top: 0.5rem; */
   }
 
   .postLabels > * {
