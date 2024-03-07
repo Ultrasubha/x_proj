@@ -9,7 +9,7 @@
           {{ post.author__username }} 👾@{{ post.author__username }} ·
           {{post.created_at|custom_timesince }}
         </div>
-        <div>{{ post.content }}</div>
+        <div>{{ post.content|linebreaksbr }}</div>
         <div class="mediaContent">
           {% if post.media %} {% if post.media|is_image %}
           <img
