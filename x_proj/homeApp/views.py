@@ -10,9 +10,11 @@ from collections import Counter
 def home_view(request):
     user = request.user
     posts = Post.objects.values('id', 'author__username', 'content', 'media', 'created_at', 'likes_count').order_by('-created_at')
-    userPosts = user.post_set.all()
+    userPosts = user.post_set.values('id', 'author__username', 'content', 'media', 'created_at', 'likes_count').order_by('-created_at')
+    
     phrases = get_top_phrases_with_priority()
     liked_post_ids = user.liked_posts.values_list('id', flat=True) if user.is_authenticated else []
+    
     return render(request, "homeApp/base.html", {'user': user, 'posts': posts, 'userPosts': userPosts, 'liked_post_ids': liked_post_ids, 'phrases': phrases})
 
 
