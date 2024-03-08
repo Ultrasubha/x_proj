@@ -13,7 +13,6 @@
 
 }
   .sabkaBaap {
-    /* background-color: orange; */
     display: flex;
     padding-top: 5rem;
   }
@@ -22,7 +21,6 @@
     height: 32rem;
     font-size: 25rem;
     width: 50%;
-    /* background-color: green; */
     color: white;
     text-align: center;
   }
@@ -32,11 +30,6 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    /* background-color: aquamarine;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 100%; */
   }
 
   .happeningNow {
