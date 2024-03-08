@@ -1,25 +1,25 @@
 function onAccountCreate() {
+  document.body.style.overflow = "hidden";
   document.getElementById("overlay").style.display = "block";
   document.getElementById("newUser").style.display = "block";
-  document.body.style.overflow = "hidden";
 }
 
 function hideOnAccountCreate() {
+  document.body.style.overflow = "auto";
   document.getElementById("overlay").style.display = "none";
   document.getElementById("newUser").style.display = "none";
-  document.body.style.overflow = "auto";
 }
 
 function onSignIn() {
+  document.body.style.overflow = "hidden";
   document.getElementById("overlay").style.display = "block";
   document.getElementById("existingUser").style.display = "block";
-  document.body.style.overflow = "hidden";
 }
 
 function hideOnSignInWindow() {
+  document.body.style.overflow = "auto";
   document.getElementById("overlay").style.display = "none";
   document.getElementById("existingUser").style.display = "none";
-  document.body.style.overflow = "auto";
 }
 
 function onPassWordForgotten() {

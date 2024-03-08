@@ -35,6 +35,10 @@
   font-weight: bold;
 }
 
+.centreText {
+  text-align: center;
+}
+
 /* DIV FLEX */
 
 .onlyFlex {
@@ -62,6 +66,10 @@
 }
 
 /* CUSTOM DIVS */
+
+.fullWidth {
+  width: 100%;
+}
 
 .cards {
   background-color: rgb(40, 40, 40);

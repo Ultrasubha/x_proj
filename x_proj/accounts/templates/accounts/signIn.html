@@ -1,22 +1,22 @@
 <div id="existingUser">
-    <header class="userHeader">
+    <header class="onlyFlex">
         <span id="closeBtn" onclick="hideOnSignInWindow()">&times;</span>
-        <div>𝕏</div>
+        <div class="fullWidth mahaText">𝕏</div>
     </header>
-    <div class="centerPe">
+    <div class="wellCentered">
         <form id="userForm" class="signInPadding" action="login-url" method="post">
             {% csrf_token %}
             <h2>Sign in to X</h2>
             {% include 'accounts/thirdPartySignIn.html' %}
             <input type="text" placeholder="Phone, email, or username" name="name">
             <input type="password" placeholder="password" name="password">
-            <button class="roundedBtn noBorder biggerText centerPe" type="submit">
+            <button class="roundedBtn noBorder mediumText wellCentered" type="submit">
                 <b>Next</b>
             </button>
-            <button class="frgtPasswd roundedBtn whiteText noBorder biggerText centerPe" type="button">
+            <button class="frgtPasswd roundedBtn whiteText noBorder mediumText wellCentered" type="button">
                 <b>Forgot password?</b>
             </button>
-            <div class="grayText">Don't have an account? <a href="">Sign up</a></div>
+            <div class="grayText smallText">Don't have an account? <a href="">Sign up</a></div>
         </form>
     </div>
 </div>

@@ -17,11 +17,12 @@
     <link rel="icon" type="image/x-icon" href="{% static 'images/x.avif' %}" />
     <link rel="stylesheet" href="{% static 'css/account.css' %}" />
     <link rel="stylesheet" href="{% static 'css/common.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
     <script src="{% static 'js/account.js' %}"></script>
   </head>
 
   <body>
-    <article class="centerPe dadaji">
+    <article class="wellCentered dadaji">
       <div id="overlay"></div>
       {% include 'accounts/signUp.html' %} {% include 'accounts/signIn.html' %}
       <article class="sabkaBaap_n_footer">
@@ -34,16 +35,16 @@
               <form class="initialForm">
                 {% include 'accounts/thirdPartySignIn.html' %}
                 <button
-                  class="roundedBtn createAccountBtn whiteText noBorder biggerText"
+                  class="roundedBtn createAccountBtn whiteText noBorder mediumText"
                   type="button"
                   onclick="onAccountCreate()"
                 >
                   <b>Create Account</b>
                 </button>
                 {% include 'accounts/termsConditions.html' %}
-                <h3 class="whiteText biggerText">Already have an account?</h3>
+                <h3 class="whiteText mediumText">Already have an account?</h3>
                 <button
-                  class="roundedBtn signInBtn biggerText"
+                  class="roundedBtn signInBtn mediumText"
                   type="button"
                   onclick="onSignIn()"
                 >
