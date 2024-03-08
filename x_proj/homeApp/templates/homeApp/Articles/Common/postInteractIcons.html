@@ -11,12 +11,6 @@
                 {% endif %}
             </a>
         {% endif %}
-    
-    {% else %}
-        <h1>Login to retweet this post.</h1>
-    {% endif %}
-    
-    {% if user.is_authenticated %}
 
         {% if post.id in liked_post_ids %}
             <a style="color: red" class="fa fa-heart" href="/home/like_post/{{ post.id }}">{{ post.likes_count }}</a>
