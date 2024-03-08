@@ -108,5 +108,8 @@ function applyButtonStyles(button) {
 }
 
 function postComment(){
-  console.log("good");
+  console.log("hi");
+  document.body.style.overflow = "hidden";
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("postCommentWindow").style.display = "block";
 }
