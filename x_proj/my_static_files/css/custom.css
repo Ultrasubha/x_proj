@@ -79,6 +79,11 @@
   width: 100%;
 }
 
+.bodyDefault {
+  height: 100vh;
+  width: 100%;
+}
+
 .cards {
   background-color: rgb(40, 40, 40);
   border-radius: 0.75rem;

@@ -1,8 +1,8 @@
 // Post Privacy functionality
 
 document.addEventListener("DOMContentLoaded", function () {
-  var inputElement = document.querySelector(".postHere");
-  var postLabelsElement = document.querySelector(".postLabels");
+  var inputElement = document.querySelector("#postCreate");
+  var postLabelsElement = document.querySelector("#postLabelPanel");
 
   inputElement.addEventListener("click", function () {
     document.getElementById("whoCanReply").style.display = "block";
@@ -108,8 +108,13 @@ function applyButtonStyles(button) {
 }
 
 function postComment(){
-  console.log("hi");
   document.body.style.overflow = "hidden";
   document.getElementById("overlay").style.display = "block";
   document.getElementById("postCommentWindow").style.display = "block";
+}
+
+function cancelpostComment(){
+  document.body.style.overflow = "auto";
+  document.getElementById("overlay").style.display = "none";
+  document.getElementById("postCommentWindow").style.display = "none";
 }

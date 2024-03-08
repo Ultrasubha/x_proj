@@ -127,10 +127,10 @@ input[type="text"] {
   padding: 1.5rem;
 }
 
-body {
+/* body {
   display: flex;
   overflow-y: hidden;
-}
+} */
 
 button {
   border-radius: 10rem;

@@ -27,3 +27,59 @@
   background-color: darkmagenta;
   border: 2px solid lightblue;
 }
+
+.fullDiv {
+  width: 100%;
+  height: 100vh;
+  background-color: orange;
+  border: 2px solid darkgreen;
+}
+
+.tenDiv {
+  width: 10rem;
+  height: 10rem;
+  background-color: blueviolet;
+  border: 2px solid darkgreen;
+}
+
+.vDiv1 {
+  width: 10rem;
+  height: 100vh;
+  background-color: lightblue;
+  border: 2px solid darkmagenta;
+}
+
+.vDiv2 {
+  width: 10rem;
+  height: 100vh;
+  background-color: lightcoral;
+  border: 2px solid darkkhaki;
+}
+
+.vDiv3 {
+  width: 10rem;
+  height: 100vh;
+  background-color: lightsalmon;
+  border: 2px solid darkslateblue;
+}
+
+.hDiv1 {
+  width: 100%;
+  height: 10rem;
+  background-color: lightblue;
+  border: 2px solid darkmagenta;
+}
+
+.hDiv2 {
+  width: 100%;
+  height: 10rem;
+  background-color: lightcoral;
+  border: 2px solid darkkhaki;
+}
+
+.hDiv3 {
+  width: 100%;
+  height: 10rem;
+  background-color: lightsalmon;
+  border: 2px solid darkslateblue;
+}

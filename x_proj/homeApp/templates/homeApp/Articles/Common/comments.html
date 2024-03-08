@@ -1,5 +1,21 @@
 {% load static %}
 <div id="overlay"></div>
 <div id="postCommentWindow" class="focusBox">
-    <h1>test</h1>
+    <header class="onlyFlex">
+        <span onclick="cancelpostComment()">&times;</span>
+        <div class="dodgerText">Drafts</div>
+    </header>
+    <form class="onePad onlyFlex" action="createComment" , method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="imgContainer">
+          <img src="img_girl.jpg" alt="img" width="100%" height="100%" />
+        </div>
+        <div class="postKSabkuchh">
+          <textarea class="largeText" type="text" name="mesg" id="mesg" placeholder="Post your reply" required></textarea>
+          <div id="mediaContainer"></div>
+          <div class="postLabels">
+            {% include 'homeApp/Articles/Common/postLabels.html' %}
+          </div>
+        </div>
+    </form>
 </div>

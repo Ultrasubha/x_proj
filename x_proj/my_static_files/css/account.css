@@ -12,6 +12,11 @@
 @media only screen and (min-width: 769px) {
 
 }
+  .focusDimension {
+    height: 82%;
+    width: 40%;
+  }
+
   .sabkaBaap {
     display: flex;
     padding-top: 5rem;
