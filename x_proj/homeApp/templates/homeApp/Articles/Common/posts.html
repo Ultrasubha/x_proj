@@ -7,7 +7,7 @@
       <div class="tweetWithoutUserImg">
         <div class="whiteText">
           {{ post.author__username }} 👾@{{ post.author__username }} ·
-          {{post.created_at|custom_timesince }}
+          {{ post.created_at|custom_timesince }}
         </div>
         <div>{{ post.content|linebreaksbr }}</div>
         <div class="mediaContent">
