@@ -29,6 +29,14 @@
   color: #fff;
 }
 
+.skyText {
+  color: skyblue;
+}
+
+.dodgerText {
+  color: dodgerblue;
+}
+
 /* TEXT STYLES */
 
 .weighty {
