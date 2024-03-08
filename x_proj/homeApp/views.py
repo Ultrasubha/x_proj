@@ -9,21 +9,41 @@ from collections import Counter
 # @login_required
 def home_view(request):
     user = request.user
-    posts = Post.objects.values('id', 'author__username', 'content', 'media', 'created_at', 'likes_count', 'likes_count', 'retweet_count').order_by('-created_at')
-    userPosts = user.post_set.values('id', 'author__username', 'content', 'media', 'created_at', 'likes_count', 'retweet_count').order_by('-created_at')
-    phrases = get_top_phrases_with_priority()
-    
-    liked_post_ids = user.liked_posts.values_list('id', flat=True) if user.is_authenticated else []
-    retweet_post_ids = user.retweet_posts.values_list('id', flat=True) if user.is_authenticated else []
-    
-    return render(request, "homeApp/base.html", {'user': user, 'posts': posts, 'userPosts': userPosts, 'liked_post_ids': liked_post_ids, 'retweet_post_ids': retweet_post_ids, 'phrases': phrases})
+    fields = [
+        "id",
+        "author__username",
+        "content",
+        "media",
+        "created_at",
+        "likes_count",
+        "retweet_count",
+    ]
+
+    context = {
+        "user": user,
+        "posts": Post.objects.values(*fields).order_by("-created_at"),
+        "userPosts": user.post_set.values(*fields).order_by("-created_at"),
+        "liked_post_ids": (
+            user.liked_posts.values_list("id", flat=True)
+            if user.is_authenticated
+            else []
+        ),
+        "retweet_post_ids": (
+            user.retweet_posts.values_list("id", flat=True)
+            if user.is_authenticated
+            else []
+        ),
+        "phrases": get_top_phrases_with_priority(),
+    }
+
+    return render(request, "homeApp/base.html", context)
 
 
 def create_page(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         current_user = User.objects.filter(username=request.user).first()
-        mesg = request.POST.get('mesg', '')
-        myfile = request.FILES.get('media')
+        mesg = request.POST.get("mesg", "")
+        myfile = request.FILES.get("media")
         if myfile:
             fs = FileSystemStorage()
             filename = fs.save(myfile.name, myfile)
@@ -32,6 +52,7 @@ def create_page(request):
         newPost = Post(author=current_user, content=mesg, media=filename)
         newPost.save()
         return redirect("/home")
+
 
 # @login_required
 def like_post(request, post_id):
@@ -68,7 +89,23 @@ def get_top_phrases_with_priority(top_count=4):
     sentences = [post.content for post in Post.objects.all()]
 
     word_counts = Counter()
-    exclude_words = ["this", "that", "the", "is", "a", "with", "and", "should", "be", "has", "no", "i", "am", "you", "your"]
+    exclude_words = [
+        "this",
+        "that",
+        "the",
+        "is",
+        "a",
+        "with",
+        "and",
+        "should",
+        "be",
+        "has",
+        "no",
+        "i",
+        "am",
+        "you",
+        "your",
+    ]
     exclude_words += [words.capitalize() for words in exclude_words]
     exclude_words += ["#", "!!!", ":)"]
 
