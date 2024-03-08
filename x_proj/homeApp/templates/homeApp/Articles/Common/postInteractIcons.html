@@ -1,5 +1,5 @@
 <div class="farApart grayText postInteractIcons">
-    <a class="fa fa-comment-o"></a>
+    <a class="fa fa-comment-o" onclick="postComment()"></a>
     {% if user.is_authenticated %}
 
         {% if post.id in retweet_post_ids %}

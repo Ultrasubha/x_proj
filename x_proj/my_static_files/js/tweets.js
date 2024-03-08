@@ -106,3 +106,7 @@ function applyButtonStyles(button) {
     button.style.backgroundColor = "rgba(32, 32, 32, 0.7)";
   });
 }
+
+function postComment(){
+  console.log("good");
+}
