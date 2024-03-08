@@ -129,20 +129,6 @@
     overflow: auto;
   }
 
-  #newUser, #existingUser {
-    display: none; /* Set initial display to none */
-    background-color: black;
-    color: white;
-    padding: 1rem;
-    border-radius: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    position: fixed;
-    z-index: 3;
-    height: 82%;
-    width: 40%;
-  }
-
   .signInPadding {
     padding-left: 15rem;
     width: 75%;

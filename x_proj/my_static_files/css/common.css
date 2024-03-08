@@ -53,3 +53,17 @@ body {
   background-color: rgba(64, 64, 78, 0.5);
   z-index: 2;
 }
+
+.focusBox {
+  display: none; /* Set initial display to none */
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: fixed;
+  z-index: 3;
+  height: 82%;
+  width: 40%;
+}
