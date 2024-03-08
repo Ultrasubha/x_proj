@@ -9,449 +9,328 @@
 /* Styles for Desktop (769px wide and above) */
 @media only screen and (min-width: 769px) {
 }
-  a:link {
-    color: inherit;
-    background-color: inherit;
-    text-decoration: none;
-  }
-  
-  a:visited {
-    color: inherit;
-    background-color: inherit;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    color: inherit;
-    background-color: inherit;
-  }
-  
-  a:active {
-    color: inherit;
-    background-color: inherit;
-  }
-  
-  .imgdefault {
-    background-color: rgba(0, 0, 0, 0.76);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 80%;
-  }
-
-  nav {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    width: 15%;
-    height: 100vh;
-    padding: 0.5rem 3rem 2rem 6rem;
-    font-size: x-large;
-    color: white;
-    overflow: scroll;
-  }
-
-  .iconsTexts > * {
-    padding: 0.7rem;
-  }
-
-  nav > *:hover {
-    background-color:  rgb(33, 33, 33);
-    border-radius: 5rem;
-    /* padding-right: 2rem; */
-    width: fit-content;
-  }
-
-  .logOutBtn:hover {
-    width: auto;
-  }
-
-  article {
-    width: 40%;
-    height: 100vh;
-  }
-
-  .faintBorder {
-    border: 1px solid rgb(63, 63, 63);
-  }
-
-  .stickyUpper {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
-  }
-
-  .stickyUpper > * {
-    padding: 1rem;
-  }
-
-  .stickyUpper > *:hover {
-    background-color: rgba(33, 33, 33, 0.4);
-  }
-
-  .stickyUpperTexts {
-    color: #fff;
-    font-weight: bold;
-    width: 40%;
-    text-align: center;
-  }
-
-  input[type="file"] {
-    display: none;
-  }
-
-  textarea, input[type="text"] {
-    background-color: transparent;
-    color: white;
-    border: none;
-    outline: none;
-    width: 100%;
-    resize: none;
-  }
-
-  .posticons {
-    display: inline-block;
-    color: #fff;
-    padding: 0.75rem;
-    border-radius: 10rem;
-    cursor: pointer;
-  }
-
-  .postHere {
-    padding: 1rem;
-  }
-
-  .onlyFlex {
-    display: flex;
-  }
-
-  .postKSabkuchh {
-    width: 100%;
-    /* padding-right: 1rem; */
-    box-sizing: border-box;
-  }
-
-  .postLabels {
-    /* border-top: 1px solid rgb(63, 63, 63); */
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    /* padding-top: 0.5rem; */
-  }
-
-  .postLabels > * {
-    width: 50%;
-    border: 2px;
-    display: flex;
-  }
-
-  .postLabels > div:first-child > * {
-    color: deepskyblue;
-  }
-
-  .postLabels > div:nth-child(2) {
-    justify-content: flex-end;
-    align-items: center;
-  }
-
-  .feed {
-    padding: 1.5rem;
-  }
-
-  .grayText {
-    color: gray;
-  }
-
-  .largeText {
-    font-size: x-large;
-  }
-
-  .mahaText {
-    font-size: xx-large;
-  }
-
-  .semiLargeText {
-    font-size: large;
-  }
-
-  .mediumText {
-    font-size: medium;
-  }
-
-  .smallText {
-    font-size: small;
-  }
-
-  body {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    background-color: black;
-    overflow-y: hidden;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
-  Helvetica, Arial, "Lucida Grande", sans-serif;
-  }
-
-  button {
-    border-radius: 10rem;
-    border: none;
-    color: white;
-    background-color: deepskyblue;
-    padding: 0.5rem;
-    font-size: medium;
-  }
-
-  nav > button {
-    width: 100%;
-    padding: 0.75rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  aside {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    width: 25%;
-    overflow-y: auto;
-    padding: 0.5rem 1rem 0rem 1rem;
-  }
-
-  footer {
-    font-size: small;
-    color: gray;
-    display: flex;
-    flex-wrap: wrap;
-    padding-bottom: 7rem;
-  }
-
-  footer > * {
-    padding: 0.25rem;
-  }
-
-  .weighty {
-    font-weight: bold;
-  }
-
-  .whiteText {
-    color: #fff;
-  }
-
-  .cards {
-    background-color: rgb(40, 40, 40);
-    border-radius: 0.75rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .nodisplay {
-    display: none;
-  }
-
-  .fourWidthBtn {
-    width: 4rem;
-    height: 2rem;
-  }
-
-  .onePad {
-    padding: 1rem;
-  }
-
-  .halfPadLeft {
-    padding-left: 0.5rem;
-  }
-
-  .contentBorder {
-    border-radius: 1.5rem;
-    border: 1px solid rgb(63, 63, 63);
-  }
-
-  .searchBar {
-    padding: 0.5rem 1rem 0.5rem 1rem;
-    border-radius: 10rem;
-  }
-
-  .cards > * {
-    padding: 0.5rem;
-  }
-
-  .wellCentered {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .farApart {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .columnApart {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .columnApart_ChildrenStyles > * {
-      padding: 0.5rem;
-  }
-
-  .imgContainer {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 10rem;
-    color: brown;
-  }
-
-  .followButton {
-    color: black;
-    background-color: white;
-    width: 5rem;
-  }
-
-  .skyBlue {
-    color: deepskyblue;
-  }
-
-  #mediaContainer {
-    display: none;
-    overflow: hidden;
-    margin-top: 1.5rem;
-    position: relative;
-  }
-
-  .mediaContent {
-    width: 100%;
-  }
-
-  .tweetWithoutUserImg {
-    width: 100%;
-  }
-
-  .tweetWithoutUserImg > * {
-    padding-top: 0.5rem;
-  }
-
-  .postInteractIcons {
-    width: 100%;
-  }
-
-  .postInteractIcons > * {
-    width: 20%;
-    padding-top: 0.5rem;
-  }
-
-  .bookmarkShare {
-    text-align: end;
-  }
-
-  .bookmarkShare > * {
-    padding-left: 1rem;
-  }
-
-  .whoToFollow {
-    /* background-color: orangered; */
-  }
-
-  .circle {
-    width: 0.5rem;
-    height: 0.5rem;
-    line-height: 0.5rem;
-    border-radius: 50%;
-    text-align: center;
-  }
-
-  .cross {
-    content : "&#x2715;";
-  }
-
-  .ellipsis {
-    display: inline-block;
-    font-size: 16px;
-  }
-
-  .contentSection {
-    display: none;
-  }
-
-  .contentSection:target {
-    display: block;
-    overflow-y: auto;
-  }
-
-  .logOutSection {
-    display: none;
-    position: absolute;
-    left: 6%;
-    bottom: 9.5rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    background-color: black;
-    font-size: 21px;
-    border: none;
-    border-radius: 1rem;
-    box-shadow: 0 0 8px rgba(150, 150, 150, 0.7);
-    z-index: 3;
-  }
-
-  .logOutSection * {
-    padding: 0.5rem 1rem 0.5rem 1rem;
-  }
-
-  .logOutSection *:hover {
-    background-color:  rgb(33, 33, 33);
-  }
-
-  #whoCanReply {
-    display: none;
-    color:deepskyblue;
-    margin:0.5rem;
-    padding: 0.25rem;
-    border-radius: 10rem;
-    width: fit-content;
-  }
-
-  
-
-  #clearButton {
-    background-color: deepskyblue;
-    border-radius: 10rem;
-    font-size: small;
-    color:black;
-  }
-
-  #whoCanReply:hover {
-    background-color: rgb(6, 12, 20);
-  }
-
-  .fa-bookmark:hover, .fa-upload:hover,.fa-comment-o:hover, .fa-bar-chart:hover {
-    color:deepskyblue;
-  }
-
-  .fa-retweet:hover {
-    color:green;
-  }
-
-  .fa-heart-o:hover {
-    color:red;
-  }
-
-  /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
-  body::-webkit-scrollbar,
-  nav::-webkit-scrollbar,
-  aside::-webkit-scrollbar,
-  article::-webkit-scrollbar {
-      display: none;
-  }
-
-  /* Hide scrollbar for IE, Edge, and Firefox */
-  body,
-  nav,
-  aside,
-  article {
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
-  }
+nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  height: 100vh;
+  padding: 0.5rem 3rem 2rem 6rem;
+  font-size: x-large;
+  color: white;
+  overflow: scroll;
+}
+
+.iconsTexts > * {
+  padding: 0.7rem;
+}
+
+nav > *:hover {
+  background-color: rgb(33, 33, 33);
+  border-radius: 5rem;
+  /* padding-right: 2rem; */
+  width: fit-content;
+}
+
+.logOutBtn:hover {
+  width: auto;
+}
+
+article {
+  width: 40%;
+  height: 100vh;
+}
+
+.faintBorder {
+  border: 1px solid rgb(63, 63, 63);
+}
+
+.stickyUpper {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.stickyUpper > * {
+  padding: 1rem;
+}
+
+.stickyUpper > *:hover {
+  background-color: rgba(33, 33, 33, 0.4);
+}
+
+.stickyUpperTexts {
+  color: #fff;
+  font-weight: bold;
+  width: 40%;
+  text-align: center;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+textarea,
+input[type="text"] {
+  background-color: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  width: 100%;
+  resize: none;
+}
+
+.posticons {
+  display: inline-block;
+  color: #fff;
+  padding: 0.75rem;
+  border-radius: 10rem;
+  cursor: pointer;
+}
+
+.postHere {
+  padding: 1rem;
+}
+
+.postKSabkuchh {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.postLabels {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+.postLabels > * {
+  width: 50%;
+  border: 2px;
+  display: flex;
+}
+
+.postLabels > div:first-child > * {
+  color: deepskyblue;
+}
+
+.postLabels > div:nth-child(2) {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.feed {
+  padding: 1.5rem;
+}
+
+body {
+  display: flex;
+  overflow-y: hidden;
+}
+
+button {
+  border-radius: 10rem;
+  border: none;
+  color: white;
+  background-color: deepskyblue;
+  padding: 0.5rem;
+  font-size: medium;
+}
+
+nav > button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.fourWidthBtn {
+  width: 4rem;
+  height: 2rem;
+}
+
+aside {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 25%;
+  overflow-y: auto;
+  padding: 0.5rem 1rem 0rem 1rem;
+}
+
+footer {
+  font-size: small;
+  color: gray;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 7rem;
+}
+
+footer > * {
+  padding: 0.25rem;
+}
+
+.contentBorder {
+  border-radius: 1.5rem;
+  border: 1px solid rgb(63, 63, 63);
+}
+
+.searchBar {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 10rem;
+}
+
+.imgContainer {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 10rem;
+  color: brown;
+}
+
+.followButton {
+  color: black;
+  background-color: white;
+  width: 5rem;
+}
+
+.skyBlue {
+  color: deepskyblue;
+}
+
+#mediaContainer {
+  display: none;
+  overflow: hidden;
+  margin-top: 1.5rem;
+  position: relative;
+}
+
+.mediaContent {
+  width: 100%;
+}
+
+.tweetWithoutUserImg {
+  width: 100%;
+}
+
+.tweetWithoutUserImg > * {
+  padding-top: 0.5rem;
+}
+
+.postInteractIcons {
+  width: 100%;
+}
+
+.postInteractIcons > * {
+  width: 20%;
+  padding-top: 0.5rem;
+}
+
+.bookmarkShare {
+  text-align: end;
+}
+
+.bookmarkShare > * {
+  padding-left: 1rem;
+}
+
+.circle {
+  width: 0.5rem;
+  height: 0.5rem;
+  line-height: 0.5rem;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.ellipsis {
+  display: inline-block;
+  font-size: 16px;
+}
+
+.contentSection {
+  display: none;
+}
+
+.contentSection:target {
+  display: block;
+  overflow-y: auto;
+}
+
+.logOutSection {
+  display: none;
+  position: absolute;
+  left: 6%;
+  bottom: 9.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: black;
+  font-size: 21px;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 0 8px rgba(150, 150, 150, 0.7);
+  z-index: 3;
+}
+
+.logOutSection * {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+.logOutSection *:hover {
+  background-color: rgb(33, 33, 33);
+}
+
+#whoCanReply {
+  display: none;
+  color: deepskyblue;
+  margin: 0.5rem;
+  padding: 0.25rem;
+  border-radius: 10rem;
+  width: fit-content;
+}
+
+#clearButton {
+  background-color: deepskyblue;
+  border-radius: 10rem;
+  font-size: small;
+  color: black;
+}
+
+#whoCanReply:hover {
+  background-color: rgb(6, 12, 20);
+}
+
+.fa-bookmark:hover,
+.fa-upload:hover,
+.fa-comment-o:hover,
+.fa-bar-chart:hover {
+  color: deepskyblue;
+}
+
+.fa-retweet:hover {
+  color: green;
+}
+
+.fa-heart-o:hover {
+  color: red;
+}
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+body::-webkit-scrollbar,
+nav::-webkit-scrollbar,
+aside::-webkit-scrollbar,
+article::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+body,
+nav,
+aside,
+article {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

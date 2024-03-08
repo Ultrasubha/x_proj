@@ -1,0 +1,96 @@
+/* TEXT SIZES */
+.smallText {
+  font-size: small;
+}
+
+.mediumText {
+  font-size: medium;
+}
+
+.semiLargeText {
+  font-size: large;
+}
+
+.largeText {
+  font-size: x-large;
+}
+
+.mahaText {
+  font-size: xx-large;
+}
+
+/* TEXT COLORS */
+
+.grayText {
+  color: gray;
+}
+
+.whiteText {
+  color: #fff;
+}
+
+/* TEXT STYLES */
+
+.weighty {
+  font-weight: bold;
+}
+
+/* DIV FLEX */
+
+.onlyFlex {
+  display: flex;
+}
+
+.wellCentered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.farApart {
+  display: flex;
+  justify-content: space-between;
+}
+
+.columnApart {
+  display: flex;
+  flex-direction: column;
+}
+
+.columnApart_ChildrenStyles > * {
+  padding: 0.5rem;
+}
+
+/* CUSTOM DIVS */
+
+.cards {
+  background-color: rgb(40, 40, 40);
+  border-radius: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.cards > * {
+  padding: 0.5rem;
+}
+
+/* PAD STYLES */
+
+.onePad {
+  padding: 1rem;
+}
+
+.halfPadLeft {
+  padding-left: 0.5rem;
+}
+
+/* SHAPES */
+
+.cross {
+  content: "&#x2715;";
+}
+
+/* MORE STYLES */
+
+.nodisplay {
+  display: none;
+}

@@ -1,0 +1,44 @@
+a:link {
+  color: inherit;
+  background-color: inherit;
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+  background-color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
+  background-color: inherit;
+}
+
+a:active {
+  color: inherit;
+  background-color: inherit;
+}
+
+footer {
+  color: gray;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: black;
+  color: white;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.imgdefault {
+  background-color: rgba(0, 0, 0, 0.76);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 80%;
+}
