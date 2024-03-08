@@ -1,0 +1,45 @@
+{% load static %}
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/comm.css'%}" />
+    <title>navbar</title>
+    <script>
+        function togglePopup() {
+            const overlay = document.getElementById('overlay');
+            overlay.style.display = overlay.style.display === 'none' ? 'flex' : 'none';
+        }
+    </script>
+
+</head>
+
+<body>
+
+<div id="PostComment" class="Post-Comment">
+    <div class="c-top">
+        <img src="{% if commentuser.profile_image %}
+                        {{ commentuser.profile_image.url }}
+                    {% else %}
+                    {% static 'imgs/avatar.png' %}
+                    {% endif %}" alt="" />
+        
+        <div class="c-top-text">
+        <h4>{{ comment.user.username  }}</h4>
+        <h4>{{ comment.created_at |naturaltime  }}</h4>
+        </div>
+    </div>
+    
+    <div class="c-bot">
+            <p>{{ comment.content }}</p>
+            
+        </form>
+    </div>
+</div>
+
+</body>
+
+</html>

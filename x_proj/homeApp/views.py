@@ -39,11 +39,9 @@ def like_post(request, post_id):
     post = Post.objects.get(id=post_id)
 
     if logged_user in post.liked_by.all():
-
         post.likes_count -= 1
         post.liked_by.remove(logged_user)
     else:
-
         post.likes_count += 1
         post.liked_by.add(logged_user)
 
@@ -56,11 +54,9 @@ def retweet_post(request, post_id):
     post = Post.objects.get(id=post_id)
 
     if logged_user in post.retweet_by.all():
-
         post.retweet_count -= 1
         post.retweet_by.remove(logged_user)
     else:
-
         post.retweet_count += 1
         post.retweet_by.add(logged_user)
 
