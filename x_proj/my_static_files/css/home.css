@@ -9,6 +9,11 @@
 /* Styles for Desktop (769px wide and above) */
 @media only screen and (min-width: 769px) {
 }
+
+.littleWidth {
+  width: 50%;
+}
+
 nav {
   position: -webkit-sticky;
   position: sticky;
@@ -192,7 +197,7 @@ footer > * {
   color: brown;
 }
 
-.followButton {
+.whiteButton {
   color: black;
   background-color: white;
   width: 5rem;

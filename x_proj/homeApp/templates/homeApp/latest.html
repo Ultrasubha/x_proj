@@ -28,30 +28,22 @@
 </div>
 <div class="onePad cards">
   <div class="semiLargeText weighty whiteText">Who to follow</div>
-  <div class="farApart">
-    <div class="farApart">
-      <div class="imgContainer">
-        <img src="img_girl.jpg" alt="img" width="100%" height="100%" />
-      </div>
-      <div class="whoToFollow">
-        <div class="whiteText">PMO India</div>
-        <div class="whiteText">@PMOIndia</div>
-      </div>
-    </div>
-    <button class="followButton">Follow</button>
-  </div>
-  <div class="farApart">
-    <div class="farApart">
-      <div class="imgContainer">
-        <img src="img_girl.jpg" alt="img" width="100%" height="100%" />
-      </div>
-      <div class="whoToFollow">
-        <div class="whiteText">PMO India</div>
-        <div class="whiteText">@PMOIndia</div>
-      </div>
-    </div>
-    <button class="followButton">Follow</button>
-  </div>
+    {% for diff_user in users %}
+      {% if diff_user != user %}
+        <div class="farApart">
+          <div class="farApart">
+            <div class="imgContainer">
+              <img src="img_girl.jpg" alt="img" width="100%" height="100%" />
+            </div>
+            <div class="whoToFollow">
+              <div class="whiteText">{{ diff_user }}</div>
+              <div class="whiteText">@{{ diff_user }}</div>
+            </div>
+          </div>
+          <button class="whiteButton">Follow</button>
+        </div>
+      {% endif %}
+    {% endfor %}
   <div class="skyBlue" href="">Show more</div>
 </div>
 <footer aria-label="Footer" role="navigation">

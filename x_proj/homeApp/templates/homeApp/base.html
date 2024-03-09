@@ -23,12 +23,15 @@
     <script src="{% static 'js/latest.js' %}"></script>
   </head>
 <body onload="modifyUrl()">
-  <div class="level1 wellCentered">{% include 'homeApp/Articles/Common/comments.html' %}</div>
-    <div class="onlyFlex level2n3">
-      {% include 'homeApp/navbar.html' %}
-      <article class="faintBorder contentSection" id="tweets">{% include 'homeApp/Articles/TweetsSection/tweets.html' %}</article>
-      <article class="faintBorder contentSection" id="Profile">{% include 'homeApp/Articles/ProfileSection/profile.html' %}</article>
-      <aside>{% include 'homeApp/latest.html' %}</aside>
-    </div>
+  <div class="level1 wellCentered">
+    {% include 'homeApp/Articles/Common/comments.html' %}
+    {% include 'homeApp/Articles/ProfileSection/profilePage.html' %}
+  </div>
+  <div class="onlyFlex level2n3">
+    {% include 'homeApp/navbar.html' %}
+    <article class="faintBorder contentSection" id="tweets">{% include 'homeApp/Articles/TweetsSection/tweets.html' %}</article>
+    <article class="faintBorder contentSection" id="Profile">{% include 'homeApp/Articles/ProfileSection/profile.html' %}</article>
+    <aside>{% include 'homeApp/latest.html' %}</aside>
+  </div>
 </body>
 </html>

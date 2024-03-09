@@ -1,0 +1,21 @@
+{% load static %}
+<div id="overlay"></div>
+<div id="profilePageWindow" class="focusBox">
+    <header class="farApart">
+      <div class="wellCentered littleWidth farApart">
+        <span class="mahaText" onclick="canceleditProfile()">&times;</span>
+        <span class="semiLargeText weighty">Edit Profile</span>
+      </div>
+        <button class="whiteButton">Save</button>
+    </header>
+    <form id="postComment" class="onePad columnApart" action="" , method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="imgContainer">
+          <img src="img_girl.jpg" alt="img" width="100%" height="100%" />
+        </div>
+        <input type="text" placeholder="Name" name="name">
+        <input type="text" placeholder="Bio" name="Bio">
+        <input type="text" placeholder="Location" name="Location">
+        <input type="text" placeholder="Website" name="Website">
+    </form>
+</div>

@@ -2,8 +2,10 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.core.files.storage import FileSystemStorage
-from .models import Post
+from .models import Post, Comment
 from collections import Counter
+from django.http import HttpResponse
+
 
 
 # @login_required
@@ -21,6 +23,7 @@ def home_view(request):
 
     context = {
         "user": user,
+        "users": User.objects.all(),
         "posts": Post.objects.values(*fields).order_by("-created_at"),
         "userPosts": user.post_set.values(*fields).order_by("-created_at"),
         "liked_post_ids": (
@@ -52,7 +55,33 @@ def create_page(request):
         newPost = Post(author=current_user, content=mesg, media=filename)
         newPost.save()
         return redirect("/home")
+    
 
+# @login_required
+def create_comment(request, post_id):
+    if request.method == "POST":
+        logged_user = request.user
+        post_id = Post.objects.get(id=post_id)
+        mesg = request.POST.get("mesg", "")
+        myfile = request.FILES.get("media")
+        if myfile:
+            fs = FileSystemStorage()
+            filename = fs.save(myfile.name, myfile)
+        else:
+            filename = None
+        new_comment = Comment(user=logged_user, post=post_id, content=mesg, media=filename).save()
+        return redirect("/home")
+
+
+def openUp(request, post_id):
+    post = Post.objects.get(id=post_id)
+    comments_under_post = Comment.objects.filter(post_id=post_id)
+    print("HIGHLIGHT",post)
+    context = {
+        'post' : post,
+        'comments_under_post' : comments_under_post
+    }
+    return render(request, "homeApp/Articles/Common/dummy.html", context)
 
 # @login_required
 def like_post(request, post_id):

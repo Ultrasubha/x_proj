@@ -107,14 +107,28 @@ function applyButtonStyles(button) {
   });
 }
 
-function postComment(){
+function postComment(postId){
   document.body.style.overflow = "hidden";
   document.getElementById("overlay").style.display = "block";
   document.getElementById("postCommentWindow").style.display = "block";
+  path = 'create_comment/' + postId + '/'
+  document.querySelector('#postComment').setAttribute('action', path);
 }
 
 function cancelpostComment(){
   document.body.style.overflow = "auto";
   document.getElementById("overlay").style.display = "none";
   document.getElementById("postCommentWindow").style.display = "none";
+}
+
+function editProfile(){
+  document.body.style.overflow = "hidden";
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("profilePageWindow").style.display = "block";
+}
+
+function canceleditProfile(){
+  document.body.style.overflow = "auto";
+  document.getElementById("overlay").style.display = "none";
+  document.getElementById("profilePageWindow").style.display = "none";
 }

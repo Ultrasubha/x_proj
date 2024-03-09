@@ -8,6 +8,7 @@ class Comment(models.Model):
         "Post", on_delete=models.CASCADE, related_name="post_comments"
     )
     content = models.TextField()
+    media = models.URLField(null=True, blank=True, default=None)
     created_at = models.DateTimeField(auto_now_add=True)
 
 
@@ -27,13 +28,10 @@ class Post(models.Model):
 
 
 class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=255, blank=True)
-    bio = models.TextField(blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    profile_image = models.ImageField(
-        upload_to="profile_images/", blank=True, null=True
-    )
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    profile_pic = models.URLField(blank=True, null=True)
+    profile_cover = models.URLField(blank=True, null=True)
+    user_description = models.TextField(blank=True)
     followers = models.ManyToManyField(User, related_name="following", blank=True)
     following = models.ManyToManyField(
         User, related_name="followers", symmetrical=False, blank=True
