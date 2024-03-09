@@ -74,11 +74,11 @@ def create_comment(request, post_id):
 
 
 def openUp(request, post_id):
-    post = Post.objects.get(id=post_id)
+    particular_post = Post.objects.get(id=post_id)
     comments_under_post = Comment.objects.filter(post_id=post_id)
-    print("HIGHLIGHT",post)
+    # print("HIGHLIGHT",post)
     context = {
-        'post' : post,
+        'particular_post' : particular_post,
         'comments_under_post' : comments_under_post
     }
     return render(request, "homeApp/Articles/Common/dummy.html", context)
